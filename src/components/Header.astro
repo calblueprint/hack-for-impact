@@ -1,0 +1,17 @@
+---
+import NavBar from "./NavBar.tsx";
+import Hero from "./Hero.astro";
+---
+
+<header class="min-h-screen w-full flex flex-col">
+    <NavBar
+        links={[
+            { name: "About", url: "#about" },
+            { name: "Non Profits", url: "#nonprofits" },
+            { name: "Schedule", url: "#schedule" },
+            { name: "FAQ", url: "#faq" }
+        ]}
+        client:load
+    />
+    <Hero />
+</header>

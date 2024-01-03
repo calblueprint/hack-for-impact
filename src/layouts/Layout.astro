@@ -1,0 +1,88 @@
+---
+import "@fontsource-variable/lexend-deca";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    html {
+        font-family: "Lexend Deca Variable", system-ui, sans-serif;
+        background: #f9f7f2;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    @layer base {
+        h1 {
+            @apply text-5xl;
+            @apply font-bold;
+            line-height: 1;
+        }
+
+        h2 {
+            @apply text-sm;
+            line-height: 1.25;
+        }
+
+        h3 {
+            @apply text-xs;
+            @apply font-light;
+            line-height: 1;
+        }
+
+        h4,
+        p {
+            @apply text-xs;
+            @apply font-light;
+        }
+
+        @screen md {
+            h1 {
+                @apply text-8xl;
+            }
+
+            h2 {
+                @apply text-4xl;
+            }
+
+            h3 {
+                @apply text-2xl;
+            }
+
+            h4 {
+                @apply text-xl;
+            }
+
+            p {
+                @apply text-lg;
+            }
+        }
+    }
+</style>
