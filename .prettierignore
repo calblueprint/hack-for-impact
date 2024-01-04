@@ -1,0 +1,12 @@
+.github/
+.vscode/
+
+README.md
+
+.eslintrc.js
+.prettierrc.js
+astro.config.mjs
+
+package-lock.json
+package.json
+tsconfig.json
