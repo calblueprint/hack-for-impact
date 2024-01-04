@@ -12,7 +12,9 @@
     "lint:check": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
     "prettier:check": "npx prettier --check .",
-    "prettier:fix": "npx prettier --write ."
+    "prettier:fix": "npx prettier --write .",
+    "compile:check": "npx tsc --noEmit",
+    "check": "npm run lint:check && npm run prettier:check && npm run compile:check"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
