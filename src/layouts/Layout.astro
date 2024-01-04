@@ -23,25 +23,13 @@ const { title } = Astro.props;
     </body>
 </html>
 
-<style is:global>
-    :root {
-        /* breakpoints */
-        --media-lg: 1024px;
-        --media-md: 768px;
-        --media-sm: 500px;
-
-        /* colors */
-        --col-background: #f9f7f2;
-        --col-link: #5084b3;
-        --col-gray: #626262;
-        --col-pastel-blue: #808fdc;
-        --col-pastel-red: #dc8080;
-        --col-light-gray: #b2b2b2;
-    }
+<style is:global lang="scss">
+    @use "../styles/breakpoints.scss" as breakpoints;
+    @use "../styles/colors.scss" as colors;
 
     html {
         font-family: "Lexend Deca Variable", system-ui, sans-serif;
-        background: #f9f7f2;
+        background: colors.$background;
     }
 
     * {
@@ -86,7 +74,7 @@ const { title } = Astro.props;
     }
 
     /* large screens */
-    @media (min-width: 768px) {
+    @media (min-width: breakpoints.$tablet) {
         h1 {
             font-size: 6rem;
         }
