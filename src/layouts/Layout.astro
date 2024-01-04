@@ -1,8 +1,8 @@
 ---
-import "@fontsource-variable/lexend-deca";
+import '@fontsource-variable/lexend-deca';
 
 interface Props {
-    title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,79 +10,93 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body>
-        <slot />
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style is:global>
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
+<style is:global lang="scss">
+  @use '../styles/breakpoints.scss' as breakpoints;
+  @use '../styles/colors.scss' as colors;
 
-    html {
-        font-family: "Lexend Deca Variable", system-ui, sans-serif;
-        background: #f9f7f2;
+  html {
+    font-family: 'Lexend Deca Variable', system-ui, sans-serif;
+    background: colors.$background;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* text styles */
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  h4,
+  p {
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+  }
+
+  /* large screens */
+  @media (min-width: breakpoints.$tablet) {
+    h1 {
+      font-size: 6rem;
     }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    h2 {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
     }
 
-    @layer base {
-        h1 {
-            @apply text-5xl;
-            @apply font-bold;
-            line-height: 1;
-        }
-
-        h2 {
-            @apply text-sm;
-            line-height: 1.25;
-        }
-
-        h3 {
-            @apply text-xs;
-            @apply font-light;
-            line-height: 1;
-        }
-
-        h4,
-        p {
-            @apply text-xs;
-            @apply font-light;
-        }
-
-        @screen md {
-            h1 {
-                @apply text-8xl;
-            }
-
-            h2 {
-                @apply text-4xl;
-            }
-
-            h3 {
-                @apply text-2xl;
-            }
-
-            h4 {
-                @apply text-xl;
-            }
-
-            p {
-                @apply text-lg;
-            }
-        }
+    h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
+
+    h4 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
 </style>
