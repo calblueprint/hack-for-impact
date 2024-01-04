@@ -3,8 +3,8 @@
 
 README.md
 
-.eslintrc.js
-.prettierrc.js
+.eslintrc.cjs
+.prettierrc.cjs
 astro.config.mjs
 
 package-lock.json
