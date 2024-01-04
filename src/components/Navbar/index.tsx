@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import styles from "./style.module.css";
 
 interface Link {
     name: string;
@@ -14,13 +15,13 @@ export default function NavBar({ links }: Props) {
     const [menuVisible, setMenuVisible] = useState(false);
 
     return (
-        <nav className="flex z-50 bg-background w-full h-14 justify-between items-center px-8 relative">
+        <nav className={styles.nav}>
             {/* logo */}
-            <div className="h-6 w-6 z-50 rounded-full bg-gray"></div>
+            <div className={styles.logo}></div>
 
             {/* menu toggle */}
             <button
-                className="w-6 h-6 z-50 flex flex-col justify-between md:invisible"
+                className={styles.button}
                 onClick={() => setMenuVisible(!menuVisible)}
             >
                 <svg
@@ -38,10 +39,10 @@ export default function NavBar({ links }: Props) {
             </button>
 
             {/* backdrop */}
-            <div className="absolute left-0 top-0 z-40 w-full h-full bg-background md:invisible"></div>
+            <div className={styles.backdrop}></div>
 
             {/* links */}
-            <section className="z-50 justify-evenly gap-8 hidden md:flex">
+            <section className={styles.links}>
                 {links.map((l) => (
                     <a href={l.url} key={l.url}>
                         {l.name}
@@ -52,7 +53,7 @@ export default function NavBar({ links }: Props) {
             <AnimatePresence>
                 {menuVisible && (
                     <motion.section
-                        className="flex z-30 justify-evenly absolute items-end pr-8 bg-black bg-opacity-30 text-white font-light py-2 flex-col top-full left-0 w-full md:hidden"
+                        className={styles.mobileLinks}
                         initial={{ opacity: 0, translateY: -100 }}
                         animate={{ opacity: 1, translateY: 0 }}
                         exit={{ opacity: 0, translateY: -100 }}

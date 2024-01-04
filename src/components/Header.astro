@@ -1,9 +1,9 @@
 ---
-import NavBar from "./NavBar.tsx";
+import NavBar from "./Navbar";
 import Hero from "./Hero.astro";
 ---
 
-<header class="min-h-screen w-full flex flex-col">
+<header>
     <NavBar
         links={[
             { name: "About", url: "#about" },
@@ -15,3 +15,13 @@ import Hero from "./Hero.astro";
     />
     <Hero />
 </header>
+
+<style>
+    header {
+        min-height: 100svh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+./Navbar/NavBar.tsx

@@ -1,3 +1,12 @@
-<main class="min-h-screen w-full flex flex-col">
+<main>
     <slot />
 </main>
+
+<style>
+    main {
+        min-height: 100svh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+</style>

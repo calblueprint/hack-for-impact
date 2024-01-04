@@ -1,20 +1,20 @@
-<div class="flex w-full flex-grow pl-4 lg:px-20 lg:pb-20 relative">
-    <main class="my-auto">
+<div class="container">
+    <main>
         <div>
-            <h3 class="text-gray">Cal Hacks x Blueprint</h3>
+            <h3 class="gray">Cal Hacks x Blueprint</h3>
             <h1>Hack the Bay</h1>
-            <div class="h-2 sm:invisible"></div>
+            <div class="spacer"></div>
         </div>
-        <div class="w-3/5">
+        <div>
             <h2>February 25, 2024</h2>
-            <p class="text-gray">
+            <p class="gray">
                 Pauley Ballroom @ University of California, Berkeley
             </p>
-            <p class="mt-6">
+            <p class="spacer">
                 We are connecting a community of leaders, creators, and change
                 makers to tackle social challenges.
             </p>
-            <h4 class="mt-16">
+            <h4 class="spacer">
                 Registration is opening soon — stay tuned! In the meantime,
                 follow @calblueprint and @calhacks on Instagram for updates.
             </h4>
@@ -22,3 +22,45 @@
     </main>
     <aside></aside>
 </div>
+
+<style>
+    .container {
+        display: flex;
+        flex-grow: 1;
+        width: 100%;
+        padding-left: 1rem;
+        position: relative;
+
+        @media (min-width: 1024px) {
+            padding: 0 5rem 5rem 5rem;
+        }
+    }
+
+    main {
+        margin: auto 0;
+    }
+
+    main div:last-child {
+        width: 60%;
+    }
+
+    .gray {
+        color: var(--col-gray);
+    }
+
+    div.spacer {
+        height: 0.5rem;
+
+        @media (min-width: 500px) {
+            visibility: hidden;
+        }
+    }
+
+    p.spacer {
+        margin-top: 1.5rem;
+    }
+
+    h4.spacer {
+        margin-top: 4rem;
+    }
+</style>
