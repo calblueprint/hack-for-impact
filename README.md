@@ -1,6 +1,6 @@
-# Hack the Bay Website
+# Hack for Impact Website
 
-A website made for the Hack the Bay collegiate hackathon.
+A website made for the 2024 Hack for Impact collegiate hackathon.
 
 ### Installation
 
