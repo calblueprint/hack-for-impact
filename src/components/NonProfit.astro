@@ -1,0 +1,28 @@
+---
+const { name, description, image, startColor, endColor } = Astro.props;
+---
+
+<div class="card">
+  <h3>
+    {name}
+  </h3>
+  {description}
+</div>
+
+<style lang="scss" define:vars={{ image: `url(${image})`, startColor, endColor }}>
+  @use '../styles/breakpoints';
+  @use '../styles/colors';
+
+  .card {
+    background-image: linear-gradient(var(--startColor), var(--endColor)), var(--image);
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px; 
+    padding: 32px;
+    display: flex; 
+    flex-direction: column; 
+    gap: 16px; 
+    padding-top: 180px;
+    color: white;
+  }
+</style>
