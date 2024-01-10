@@ -1,1 +1,95 @@
-<section></section>
+---
+import NonProfit from './NonProfit.astro';
+---
+
+<section class="lead">
+  <h4>NON-PROFITS</h4>
+  <h2>We’re a hackathon with <span class="emphasis">social good</span> at its heart.</h2>
+  <p>
+    Our nonprofits have presented several problem areas and projects to tackle their most pressing needs. Here are the incredible organizations that we’ve partnered with:
+  </p>
+</section>
+
+<section class="nonprofits">
+  <NonProfit 
+    name="Bay Area Street Soccer" 
+    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S." 
+    image="https://cloud-26boeel6n-hack-club-bot.vercel.app/0211031_orsc_digital_photo_community_dias_street_soccer_sajad_dsc02255-2048x1638-1.jpg"
+    startColor="rgba(223, 114, 145, 0.3)"
+    endColor="rgba(223, 114, 145, 1)"
+  />
+  <NonProfit 
+    name="Bay Area Street Soccer" 
+    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S." 
+    image="https://cloud-26boeel6n-hack-club-bot.vercel.app/0211031_orsc_digital_photo_community_dias_street_soccer_sajad_dsc02255-2048x1638-1.jpg"
+    startColor="rgba(223, 114, 145, 0.3)"
+    endColor="rgba(223, 114, 145, 1)"
+  />
+  <NonProfit 
+    name="Bay Area Street Soccer" 
+    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S." 
+    image="https://cloud-26boeel6n-hack-club-bot.vercel.app/0211031_orsc_digital_photo_community_dias_street_soccer_sajad_dsc02255-2048x1638-1.jpg"
+    startColor="rgba(223, 114, 145, 0.3)"
+    endColor="rgba(223, 114, 145, 1)"
+  />
+  <NonProfit 
+    name="Bay Area Street Soccer" 
+    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S." 
+    image="https://cloud-26boeel6n-hack-club-bot.vercel.app/0211031_orsc_digital_photo_community_dias_street_soccer_sajad_dsc02255-2048x1638-1.jpg"
+    startColor="rgba(223, 114, 145, 0.3)"
+    endColor="rgba(223, 114, 145, 1)"
+  />
+  <NonProfit 
+    name="Bay Area Street Soccer" 
+    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S." 
+    image="https://cloud-26boeel6n-hack-club-bot.vercel.app/0211031_orsc_digital_photo_community_dias_street_soccer_sajad_dsc02255-2048x1638-1.jpg"
+    startColor="rgba(223, 114, 145, 0.3)"
+    endColor="rgba(223, 114, 145, 1)"
+  />
+  <NonProfit 
+    name="Bay Area Street Soccer" 
+    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S." 
+    image="https://cloud-26boeel6n-hack-club-bot.vercel.app/0211031_orsc_digital_photo_community_dias_street_soccer_sajad_dsc02255-2048x1638-1.jpg"
+    startColor="rgba(223, 114, 145, 0.3)"
+    endColor="rgba(223, 114, 145, 1)"
+  />
+</section>
+
+<style lang="scss">
+  @use '../styles/breakpoints';
+  @use '../styles/colors';
+  
+  .lead {
+    width: 100%;
+    padding-left: 1rem;
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    text-align: center;
+  
+    @media (min-width: breakpoints.$laptop) {
+      padding: 0 5rem 2rem 5rem;
+      grid-template-columns: 1fr 1fr 1fr; 
+    }
+  }
+  
+  .emphasis {
+    font-style: italic;
+  }
+
+  .nonprofits {
+    width: 100%;
+    padding-left: 1rem;
+    position: relative;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 24px;
+
+    @media (min-width: breakpoints.$laptop) {
+      padding: 0 5rem 5rem 5rem;
+      grid-template-columns: 1fr 1fr 1fr; 
+    }
+  }
+</style>
