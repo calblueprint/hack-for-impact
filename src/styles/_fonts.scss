@@ -1,0 +1,47 @@
+@import url('https://use.typekit.net/fdk0jkz.css');
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('/fonts/apercupro_bold.otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('/fonts/apercupro_medium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('/fonts/apercupro_regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Apercu Mono Pro';
+  src: url('/fonts/apercupro_mono_bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Apercu Mono Pro';
+  src: url('/fonts/apercupro_mono_medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Apercu Mono Pro';
+  src: url('/fonts/apercupro_mono_regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Apercu Mono Pro';
+  src: url('/fonts/apercupro_mono_light.ttf');
+  font-weight: 300;
+}
+
+$sans: 'Apercu Pro', system-ui, sans-serif;
+$mono: 'Apercu Mono Pro', monospace;
+$serif: 'new-spirit', serif;
