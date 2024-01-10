@@ -62,22 +62,5 @@ a {
 button {
   background: none;
   border: none;
-  border-radius: 8px;
-  display: flex;
-  gap: 0.5rem;
-  font-size: 1.25rem;
   cursor: pointer;
-}
-
-button.primary,
-button.menu {
-  background: colors.$primary;
-}
-
-button.secondary {
-  background: colors.$secondary;
-}
-
-button.menu {
-  font-family: fonts.$mono;
 }
