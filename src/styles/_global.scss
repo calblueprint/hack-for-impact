@@ -1,0 +1,79 @@
+@use '../styles/breakpoints';
+@use '../styles/colors';
+@use '../styles/fonts';
+
+html {
+  font-family: fonts.$sans;
+  background: colors.$background;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* text styles */
+h1 {
+  font-family: fonts.$serif;
+  font-size: 3.25rem;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: fonts.$serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+h4 {
+  font-family: fonts.$mono;
+  font-size: 1rem;
+}
+
+h5 {
+  font-family: fonts.$mono;
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+a {
+  color: colors.$link;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+button.primary,
+button.menu {
+  background: colors.$primary;
+}
+
+button.secondary {
+  background: colors.$secondary;
+}
+
+button.menu {
+  font-family: fonts.$mono;
+}

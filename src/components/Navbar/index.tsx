@@ -25,7 +25,6 @@ export default function NavBar({ links }: Props) {
         onClick={() => setMenuVisible(!menuVisible)}
       >
         <svg
-          className="w-full h-full"
           width="30"
           height="30"
           viewBox="0 0 30 30"
