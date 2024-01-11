@@ -1,16 +1,15 @@
 ---
 interface Props {
   href?: string; // no href = disabled
-  primary?: boolean;
-  menu?: boolean;
+  variant?: 'primary' | 'secondary' | 'menu';
 }
 
-const { href, primary, menu, ...rest } = Astro.props;
+const { href, variant = 'primary', ...rest } = Astro.props;
 
-const classes = [];
+const classes: string[] = [];
 if (!href) classes.push('disabled');
-if (primary) classes.push('primary');
-if (menu) classes.push('menu');
+if (variant !== 'secondary') classes.push('primary');
+if (variant === 'menu') classes.push('menu');
 ---
 
 <a
@@ -26,6 +25,9 @@ if (menu) classes.push('menu');
 <style lang="scss">
   @use '../styles/colors';
 
+  $primary-hover: #6dbeda;
+  $primary-pressed: #53a0bc;
+
   a {
     border-radius: 8px;
     padding: 1.25rem;
@@ -37,25 +39,25 @@ if (menu) classes.push('menu');
     gap: 0.5rem;
     cursor: pointer;
     transition: 100ms;
-  }
 
-  a.menu {
-    padding: 0.75rem;
-  }
+    &.menu {
+      padding: 0.75rem;
+    }
 
-  a.disabled {
-    cursor: default;
-  }
-
-  a:not(.disabled):hover {
-    filter: brightness(0.97);
-  }
-
-  a:not(.disabled):active {
-    filter: brightness(0.95);
+    &.disabled {
+      cursor: default;
+    }
   }
 
   a.primary {
     background-color: colors.$primary;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+
+    &:active {
+      background-color: $primary-pressed;
+    }
   }
 </style>
