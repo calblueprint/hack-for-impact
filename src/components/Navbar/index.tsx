@@ -1,6 +1,11 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+// a lot of code is commented in case mobile view
+// requires an animated menu
+
+// import { useState } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
 import styles from './style.module.scss';
+import logo from '../../graphics/tentative logo.svg';
+import { useEffect, useRef } from 'react';
 
 interface Link {
   name: string;
@@ -12,15 +17,39 @@ interface Props {
 }
 
 export default function NavBar({ links }: Props) {
-  const [menuVisible, setMenuVisible] = useState(false);
+  const navbarRef = useRef<HTMLElement>(null);
+  // const [menuVisible, setMenuVisible] = useState(false);
+
+  useEffect(() => {
+    const checkHeight = () => {
+      if (navbarRef === null) return;
+      if (window.scrollY > 0) navbarRef.current?.classList.add(styles.scrolled);
+      else navbarRef.current?.classList.remove(styles.scrolled);
+    };
+
+    checkHeight();
+
+    const scrollListener = window.addEventListener('scroll', () => {
+      checkHeight();
+    });
+
+    return scrollListener;
+  }, []);
+
+  const backToTop = () => {
+    window.history.replaceState({}, '', '/'); // clear id in url
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
 
   return (
-    <nav className={styles.nav}>
+    <nav ref={navbarRef}>
       {/* logo */}
-      <div className={styles.logo}></div>
+      <button className={styles.logo} onClick={backToTop}>
+        <img src={logo.src} alt="logo" />
+      </button>
 
       {/* menu toggle */}
-      <button
+      {/* <button
         className={styles.button}
         onClick={() => setMenuVisible(!menuVisible)}
       >
@@ -35,21 +64,21 @@ export default function NavBar({ links }: Props) {
           <rect x="0" y="15" width="30" height="2" fill="black" />
           <rect x="0" y="22" width="30" height="2" fill="black" />
         </svg>
-      </button>
+      </button> */}
 
       {/* backdrop */}
-      <div className={styles.backdrop}></div>
+      {/* <div className={styles.backdrop}></div> */}
 
       {/* links */}
       <section className={styles.links}>
         {links.map(l => (
           <a href={l.url} key={l.url}>
-            {l.name}
+            <h5>{l.name}</h5>
           </a>
         ))}
       </section>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {menuVisible && (
           <motion.section
             className={styles.mobileLinks}
@@ -64,7 +93,7 @@ export default function NavBar({ links }: Props) {
             ))}
           </motion.section>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </nav>
   );
 }
