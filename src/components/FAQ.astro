@@ -1,1 +1,144 @@
-<section></section>
+---
+import FAQDropdown from '../components/FAQDropdown';
+export interface Question {
+  label: string;
+  content: string;
+  hyperlink?: { target: string; link: string };
+}
+
+const faqs: Question[] = [
+  {
+    label: 'What is Hack for Impact?',
+    content:
+      'Hack for Impact is a 1-day hackathon, where students will creatively collaborate with non-profit organizations on social causes, and attend a series of workshops and speaker panels to learn more about emerging tech in the social impact space.',
+  },
+  {
+    label: 'Who will attend?',
+    content:
+      '200+ hackers, speakers, non-profit organizations, Blueprint and Cal Hack club members, judges, and mentors! You do not have the be a student at UC Berkeley to participate. All undergraduates, graduates, and community college students are welcome.',
+  },
+  {
+    label: 'Do I have to be in person?',
+    content:
+      'Yes! All individuals and teams must attend in-person to participate.',
+  },
+  {
+    label: 'How many people are on a team?',
+    content: 'Up to four people can be on a team.',
+  },
+  {
+    label: 'How will team matching work?',
+    content:
+      'You are welcome to form a team of up to 4 in advance. There will also be the opportunity to work solo or find team members while mixing/team-matching during the event.',
+  },
+  {
+    label: 'Is there an event schedule?',
+    content:
+      'We will release a finalized schedule soon. In the meantime, you can check out the tentative schedule here.',
+    hyperlink: {
+      target: 'here',
+      link: 'https://docs.google.com/document/d/1SrPCX9sZpT3kc4AglA-S2KL_sPYgcwCXs0zaauwysbk/edit',
+    },
+  },
+  {
+    label: 'What will I build?',
+    content:
+      'You can build ANYTHING —a website, mobile app, you name it. It’s recommended that you build something that addresses a problem statement of one of our non-profit partners to be eligible for certain prizes. However, you’re welcome to build anything with a social good focus. The goal is for you to learn and have fun!',
+  },
+  {
+    label: 'Do I have to register to just attend speaker panels/workshops?',
+    content:
+      'No. All workshops and speaker events are open to everyone! Only people who would like to hack have to sign up. ',
+  },
+  {
+    label: 'What should I bring?',
+    content:
+      'Your laptop (if you have one) and a charger. Optionally – pens, pencil, and paper!',
+  },
+
+  {
+    label: 'How will we recieve updates during the event?',
+    content:
+      'You’ll be able to connect with other participants and receive updates through a Slack channel. All attendees are invited to the Slack channel a few days before the hackathon.',
+  },
+  {
+    label: 'Are meals included?',
+    content: 'Yes! We will provide breakfast, lunch, and dinner.',
+  },
+  {
+    label: 'Is the venue accessible to public transportation?',
+    content:
+      'Yes. Pauley Ballroom is a short walk from the Downtown Berkeley BART Station and local buses (F, 51B, 52, etc.) ',
+  },
+];
+
+const split = Math.ceil(faqs.length / 2);
+const faqsCol1 = faqs.slice(0, split);
+const faqsCol2 = faqs.slice(split);
+---
+
+<section id="faq">
+  <div class="faq-headers">
+    <h4>FAQ</h4>
+    <h2>
+      Frequently asked questions – <span>we've got the answers</span>
+    </h2>
+  </div>
+  <div class="faq-content">
+    <div class="faq-container">
+      <FAQDropdown question={faqsCol1[0]} defaultOpen client:visible />
+      {
+        faqsCol1
+          .slice(1)
+          .map(faq => <FAQDropdown question={faq} client:visible />)
+      }
+    </div>
+    <div class="faq-container">
+      <FAQDropdown question={faqsCol2[0]} defaultOpen client:visible />
+      {
+        faqsCol2
+          .slice(1)
+          .map(faq => <FAQDropdown question={faq} client:visible />)
+      }
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  #faq {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 10%; // TODO: update section margin when graphics inserted
+  }
+
+  .faq-headers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 4.5rem;
+
+    span {
+      font-family: 'Apercu Pro';
+      font-size: 1.75rem;
+      font-weight: 400;
+    }
+  }
+
+  .faq-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 60vw;
+    margin: 0 15%;
+  }
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.19rem;
+    width: 50%;
+    height: max-content;
+    padding: 0 0.7rem;
+  }
+</style>
