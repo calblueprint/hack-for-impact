@@ -38,13 +38,14 @@ import witiLogo from '../graphics/sponsors/witi.webp';
 </section>
 
 <style lang="scss">
+  @use '../styles/fonts';
+
   #sponsors {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6rem;
     padding-top: 11.25rem;
-    margin-bottom: 10rem;
 
     .header-container {
       display: flex;
@@ -53,22 +54,11 @@ import witiLogo from '../graphics/sponsors/witi.webp';
       align-items: center;
       text-align: center;
       gap: 1.5rem;
-      h4 {
-        color: #3d3833;
-        font-weight: 400;
-        letter-spacing: 0.05rem;
-      }
-      h2 {
-        color: #3d3935;
-        font-weight: 500;
-        b {
-          color: #3d3935;
-          font-weight: 600;
-        }
-      }
-      p {
-        color: #3d3833;
-        font-weight: 500;
+      b {
+        font-family: fonts.$serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 150%;
       }
     }
 
