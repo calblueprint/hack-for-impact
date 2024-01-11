@@ -6,6 +6,8 @@ html {
   font-family: fonts.$sans;
   background: colors.$background;
   color: colors.$text;
+  scroll-behavior: smooth;
+  scroll-padding-top: 20svh;
 }
 
 * {
