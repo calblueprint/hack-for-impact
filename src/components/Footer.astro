@@ -1,1 +1,26 @@
-<footer></footer>
+---
+import { Image } from 'astro:assets';
+import brandIcon from '../graphics/brand.webp';
+import bearIcon from '../graphics/bear.svg';
+---
+
+<footer>
+  <Image src={bearIcon} alt="super bear" />
+  <Image class="brand" src={brandIcon} alt="brand logo" />
+</footer>
+
+<style lang="scss">
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 61px;
+    padding-top: 164px;
+    padding-bottom: 76px;
+  }
+
+  .brand {
+    width: 200px;
+    height: auto;
+  }
+</style>
