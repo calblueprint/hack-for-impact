@@ -17,13 +17,11 @@ const FAQDropdown = ({ question, defaultOpen }: FAQDropdownProps) => {
   const { label, content, hyperlink } = question;
 
   const handleToggle = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(prev => !prev);
   };
 
   const renderContent = () => {
-    const containsLink = ['Is there an event schedule?'].includes(label);
-
-    if (containsLink && hyperlink) {
+    if (hyperlink) {
       const { target, link } = hyperlink;
 
       const parts = content.split(target);
@@ -54,6 +52,7 @@ const FAQDropdown = ({ question, defaultOpen }: FAQDropdownProps) => {
         className={styles.labelContainer}
         onClick={handleToggle}
         tabIndex={0}
+        onKeyUp={handleToggle}
       >
         <div className={styles.statusIcon}>{isOpen ? '-' : '+'}</div>
         <b>{label}</b>
