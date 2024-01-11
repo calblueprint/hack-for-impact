@@ -1,13 +1,13 @@
 ---
-const { name, description, image, startColor, endColor } = Astro.props;
+const { name, description, image, startColor, endColor, url } = Astro.props;
 ---
 
-<div class="card">
+<a class="card" href={url || "#"} target="_blank">
   <h3>
     {name}
   </h3>
   {description}
-</div>
+</a>
 
 <style lang="scss" define:vars={{ image: `url(${image})`, startColor, endColor }}>
   @use '../styles/breakpoints';
@@ -26,6 +26,17 @@ const { name, description, image, startColor, endColor } = Astro.props;
     padding-top: 180px;
     height: 360px;
     color: white;
+    font-weight: 400;
+    line-height: 100%;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform .225s ease-in-out;
+  }
+  
+  .card:hover > h3 {
+    text-decoration: underline;
   }
   
   h3 {
