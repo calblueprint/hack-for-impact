@@ -1,1 +1,84 @@
-<section></section>
+<section id="sponsors">
+  <div class="header-container">
+    <h4>SPONSORS & PARTNERS</h4>
+    <h2>A round of applause for our <b>past sponsors</b></h2>
+    <p>Stay tuned — Hack for Impact sponsors will be released soon!</p>
+  </div>
+
+  <div class="sponsors-container">
+    <div class="image-container">
+      <img src="/src/graphics/sponsors/citris.webp" />
+    </div>
+    <div class="image-container">
+      <img src="/src/graphics/sponsors/wealthfront.webp" />
+    </div>
+    <div class="image-container">
+      <img src="/src/graphics/sponsors/bstf.webp" />
+    </div>
+    <div class="image-container">
+      <img src="/src/graphics/sponsors/notion.webp" />
+    </div>
+    <div class="image-container">
+      <img src="/src/graphics/sponsors/ffwd.webp" />
+    </div>
+    <div class="image-container">
+      <img src="/src/graphics/sponsors/witi.webp" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  #sponsors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    padding-top: 11.25rem;
+    margin-bottom: 10rem;
+
+    .header-container {
+      display: flex;
+      width: 46.5rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      h4 {
+        color: #3d3833;
+        font-weight: 400;
+        letter-spacing: 0.05rem;
+      }
+      h2 {
+        color: #3d3935;
+        font-weight: 500;
+        b {
+          color: #3d3935;
+          font-weight: 600;
+        }
+      }
+      p {
+        color: #3d3833;
+        font-weight: 500;
+      }
+    }
+
+    .sponsors-container {
+      display: flex;
+      width: 48.125rem;
+      justify-content: center;
+      align-content: center;
+      gap: 3rem 5rem;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+
+      .image-container {
+        display: flex;
+        max-width: 13.75rem;
+        max-height: 6.25rem;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+    }
+  }
+</style>
