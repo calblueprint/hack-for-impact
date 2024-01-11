@@ -13,33 +13,35 @@ import TitleAccent from './TitleAccent.astro';
     />
     to tackle social challenges
   </h1>
-  <Button>
-    <p>Registration will open February 1!</p>
-    <img src={stopwatchIcon.src} alt="stopwatch" />
-  </Button>
-  <span>
-    Stay tuned! In the meantime, follow
+  <div>
+    <Button variant="secondary">
+      <p class="btn-text">Registration will open February 1!</p>
+      <img src={stopwatchIcon.src} alt="stopwatch" />
+    </Button>
+    <span>
+      Stay tuned! In the meantime, follow
 
-    <a
-      href="https://www.instagram.com/calblueprint/"
-      target="_blank"
-      referrerpolicy="no-referrer"
-    >
-      @calblueprint
-    </a>
+      <a
+        href="https://www.instagram.com/calblueprint/"
+        target="_blank"
+        referrerpolicy="no-referrer"
+      >
+        @calblueprint
+      </a>
 
-    and
+      and
 
-    <a
-      href="https://www.instagram.com/calhacks/"
-      target="_blank"
-      referrerpolicy="no-referrer"
-    >
-      @calhacks
-    </a>
+      <a
+        href="https://www.instagram.com/calhacks/"
+        target="_blank"
+        referrerpolicy="no-referrer"
+      >
+        @calhacks
+      </a>
 
-    on Instagram for updates.
-  </span>
+      on Instagram for updates.
+    </span>
+  </div>
 </section>
 
 <style lang="scss">
@@ -54,8 +56,20 @@ import TitleAccent from './TitleAccent.astro';
     text-align: center;
     gap: 20px;
 
-    & > span {
-      padding: 0 28%;
+    h1 {
+      margin: 0.5rem 0;
     }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: min-content;
+      gap: 20px;
+    }
+  }
+
+  .btn-text {
+    width: max-content;
+    font-size: 1.25rem;
   }
 </style>
