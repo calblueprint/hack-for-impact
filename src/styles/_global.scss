@@ -5,6 +5,9 @@
 html {
   font-family: fonts.$sans;
   background: colors.$background;
+  color: colors.$text;
+  scroll-behavior: smooth;
+  scroll-padding-top: 20svh;
 }
 
 * {
@@ -39,6 +42,7 @@ h4 {
   letter-spacing: 0.8px;
   font-size: 1rem;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 h5 {
