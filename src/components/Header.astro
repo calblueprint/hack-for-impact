@@ -6,12 +6,13 @@ import Hero from './Hero.astro';
 <header>
   <NavBar
     links={[
-      { name: 'About', url: '#about' },
-      { name: 'Non Profits', url: '#nonprofits' },
-      { name: 'Schedule', url: '#schedule' },
+      { name: 'ABOUT', url: '#about' },
+      { name: 'NONPROFITS', url: '#nonprofits' },
+      { name: 'SCHEDULE', url: '#schedule' },
       { name: 'FAQ', url: '#faq' },
+      { name: 'CONTACT', url: '#contact' },
     ]}
-    client:media="(max-width: 767px)"
+    client:load
   />
   <Hero />
 </header>
