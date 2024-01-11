@@ -1,3 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import citrisLogo from '../graphics/sponsors/citris.webp';
+import wealthfrontLogo from '../graphics/sponsors/wealthfront.webp';
+import bstfLogo from '../graphics/sponsors/bstf.webp';
+import notionLogo from '../graphics/sponsors/notion.webp';
+import ffwdLogo from '../graphics/sponsors/ffwd.webp';
+import witiLogo from '../graphics/sponsors/witi.webp';
+---
+
 <section id="sponsors">
   <div class="header-container">
     <h4>SPONSORS & PARTNERS</h4>
@@ -7,22 +17,22 @@
 
   <div class="sponsors-container">
     <div class="image-container">
-      <img src="/src/graphics/sponsors/citris.webp" />
+      <Image src={citrisLogo} alt="CITRIS and the Banatao Institute" />
     </div>
     <div class="image-container">
-      <img src="/src/graphics/sponsors/wealthfront.webp" />
+      <Image src={wealthfrontLogo} alt="Wealthfront" />
     </div>
     <div class="image-container">
-      <img src="/src/graphics/sponsors/bstf.webp" />
+      <Image src={bstfLogo} alt="Berkeley Student Technology Fund" />
     </div>
     <div class="image-container">
-      <img src="/src/graphics/sponsors/notion.webp" />
+      <Image src={notionLogo} alt="Notion" />
     </div>
     <div class="image-container">
-      <img src="/src/graphics/sponsors/ffwd.webp" />
+      <Image src={ffwdLogo} alt="Fast Forward" />
     </div>
     <div class="image-container">
-      <img src="/src/graphics/sponsors/witi.webp" />
+      <Image src={witiLogo} alt="Women in Tech Initiaive" />
     </div>
   </div>
 </section>
