@@ -1,0 +1,63 @@
+---
+interface Props {
+  href?: string; // no href = disabled
+  variant?: 'primary' | 'secondary' | 'menu';
+}
+
+const { href, variant = 'primary', ...rest } = Astro.props;
+
+const classes: string[] = [];
+if (!href) classes.push('disabled');
+if (variant !== 'secondary') classes.push('primary');
+if (variant === 'menu') classes.push('menu');
+---
+
+<a
+  class={classes.join(' ')}
+  href={href}
+  target="_blank"
+  referrerpolicy="no-referrer"
+  {...rest}
+>
+  <slot />
+</a>
+
+<style lang="scss">
+  @use '../styles/colors';
+
+  $primary-hover: #6dbeda;
+  $primary-pressed: #53a0bc;
+
+  a {
+    border-radius: 8px;
+    padding: 1.25rem;
+    background-color: colors.$secondary;
+    color: colors.$text;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: 100ms;
+
+    &.menu {
+      padding: 0.75rem;
+    }
+
+    &.disabled {
+      cursor: default;
+    }
+  }
+
+  a.primary {
+    background-color: colors.$primary;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+
+    &:active {
+      background-color: $primary-pressed;
+    }
+  }
+</style>
