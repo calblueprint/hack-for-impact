@@ -1,11 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import brandIcon from '../graphics/brand.webp';
 import bearIcon from '../graphics/bear.svg';
 ---
 
 <footer>
-  <img src={bearIcon.src} alt="super bear" />
-  <img class="brand" src={brandIcon.src} alt="brand logo" />
+  <Image src={bearIcon} alt="super bear" />
+  <Image class="brand" src={brandIcon} alt="brand logo" />
 </footer>
 
 <style lang="scss">
@@ -20,5 +21,6 @@ import bearIcon from '../graphics/bear.svg';
 
   .brand {
     width: 200px;
+    height: auto;
   }
 </style>
