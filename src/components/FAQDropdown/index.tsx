@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import styles from './style.module.scss';
-import { type Question } from '../FAQ.astro';
+
+export interface Question {
+  label: string;
+  content: string;
+  hyperlink?: { target: string; link: string };
+}
 
 interface FAQDropdownProps {
   question: Question;
