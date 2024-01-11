@@ -1,32 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import working from '../graphics/working.webp';
+import crowdLarge from '../graphics/crowd-large.webp';
+import fourppl from '../graphics/fourppl.webp';
+import bear from '../graphics/bear.webp';
+import annie from '../graphics/anniew.webp';
+import crowd from '../graphics/crowd.webp';
+---
+
 <section>
   <h4 id="about">ABOUT US</h4>
   <div class="spacer"></div>
   <div class="header">
-    <h3>At Hack for Impact, you will join over&nbsp;</h3>
-    <h2>200+ hackers</h2>
-    <h3>&nbsp;at UC Berkeley to innovate for social good.</h3>
+    <h3>
+      At Hack for Impact, you will join over
+      <h2>200+ hackers</h2>
+      at UC Berkeley to innovate for social good.
+    </h3>
   </div>
   <div class="spacer"></div>
 
   <div class="imageRow">
-    <div class="imgbox">
-      <img src="/about/working.webp" width="264" height="171" alt="hello" />
-    </div>
-    <div class="imgbox">
-      <img src="/about/crowd-large.webp" width="264" height="171" alt="" />
-    </div>
-    <div class="imgbox">
-      <img src="/about/fourppl.webp" width="264" height="171" alt="" />
-    </div>
-    <div class="imgbox">
-      <img src="/about/bear.webp" width="264" height="171" alt="" />
-    </div>
-    <div class="imgbox">
-      <img src="/about/anniew.webp" width="264" height="171" alt="" />
-    </div>
-    <div class="imgbox">
-      <img src="/about/crowd.webp" width="264" height="171" alt="" />
-    </div>
+    <Image class="img" src={working} alt="Group of 5 people coding" />
+    <Image
+      class="img"
+      src={crowdLarge}
+      alt="Large group of people coding at hackathon"
+    />
+    <Image class="img" rc={fourppl} alt="Picture of Calhacks members" />
+    <Image
+      class="img"
+      src={bear}
+      alt="Hackathon attendees posing with stuffed bear"
+    />
+    <Image class="img" src={annie} alt="Girl with tools" />
+    <Image
+      class="img"
+      src={crowd}
+      alt="Large group of people coding at hackathon"
+    />
   </div>
 
   <div class="mission-vision">
@@ -118,13 +130,10 @@
 
     div.header {
       display: inline-block;
-      // flex-direction: row;
     }
 
-    div.header h2,
-    div.header h3 {
-      margin: 0;
-      display: inline;
+    div.header h2 {
+      display: inline-block;
     }
 
     div.imageRow {
@@ -134,8 +143,10 @@
       margin-top: 40px;
     }
 
-    div.imgbox img {
+    .img {
       border-radius: 18px;
+      width: 264px;
+      height: 171px;
     }
   </style>
 </section>
