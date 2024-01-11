@@ -8,47 +8,86 @@
   </div>
 
   
-  <div class="mainRow">
-    <h2>Our Vision</h2>
-    <p class="description">To solve the most pressing challenges of our world, 
+  <div class="bigRow">
+    <!-- <div class="leftLabel"> -->
+      <h2 class="left">Our Vision</h2>
+    <!-- </div> -->
+    <p>To solve the most pressing challenges of our world, 
       we will need the best and the brightest minds to work collaboratively on 
       creative, ethical, and technical solutions that will propel humanity forward. 
       Our audience is anyone, anywhere, who believes that 
       technology can solve hard problems, grow prosperity, 
       and expand human possibilities.</p>
   </div>
-  <div class="mainRow">
-    <h2>The Mission</h2>
+  <div class="bigRow">
+    <!-- <div class="leftLabel"> -->
+      <h2 class="left">The Mission</h2>
+    <!-- </div> -->
     <div>
-      <p class="description">Hack for Impact 2024 is a 1-day hackathon co-hosted by 
+      <p>Hack for Impact 2024 is a 1-day hackathon co-hosted by 
         Blueprint and Cal Hacks at UC Berkeley. 
         The event’s mission is two-fold:</p>
-      <div class="imagerow"></div>
-      <div class="imagerow"></div>
+      <div class="captionRow">
+        <div class="image-placeholder"></div>
+        <p>To empower student hackers to develop creative solutions 
+          for relevant social causes and collaborate with 
+          non-profit organizations on ethical innovation 
+          with tangible community impact.</p>
+      </div>
+      <div class="captionRow">
+        <div class="image-placeholder"></div>
+        <p>To educate students via a series of workshops and speaker panels 
+          to learn about professional opportunities in social good, 
+          as well as emerging technologies and their ethical aspects.</p>
+      </div>
     </div>
   </div>
  
 </section>
 
 <style lang="scss">
+  @use '../styles/colors';
   section {
     display: flex;
     flex-direction: column;
     align-items: center; 
     text-align: center;
-    width: 46.5rem;
+    max-width: 58.625rem;
     margin: 0 auto;
+    padding-top: 5rem;
   }
   div.spacer {
     height: 1.5rem;
   }
 
-  div.mainRow {
-
+  div.bigRow {
+    margin-top: 8.3125rem; 
+    display: flex;
+    flex-direction: row;
+    gap: 0 6.125rem;
+    text-align: left;
   }
 
-  div.imageRow {
+  .image-placeholder {
+    background-color: colors.$secondary;
+    min-width: 10.5rem;
+    height: 7.0625rem;
+  }
+  // div.leftLabel {
+  //   width: 12rem;
+  //   margin-right: 6.125rem;
+  // }
 
+  h2.left {
+    display: inline-block; 
+    min-width: 12rem;
+  }
+
+  div.captionRow {
+    display: flex; 
+    flex-direction: row;
+    margin-top: 3.75rem;
+    gap: 0 1.5rem; 
   }
 
   div.header {
