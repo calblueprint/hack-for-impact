@@ -1,10 +1,6 @@
 ---
 import FAQDropdown from '../components/FAQDropdown';
-export interface Question {
-  label: string;
-  content: string;
-  hyperlink?: { target: string; link: string };
-}
+import type { Question } from '../components/FAQDropdown';
 
 const faqs: Question[] = [
   {
