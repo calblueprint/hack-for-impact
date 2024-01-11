@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Button from './Button.astro';
-import stopwatchIcon from '../graphics/stopwatch.svg';
 import TitleAccent from './TitleAccent.astro';
+import stopwatchIcon from '../graphics/stopwatch.svg';
+import arrowsIcon from '../graphics/arrows.svg';
 ---
 
 <section>
@@ -16,7 +18,7 @@ import TitleAccent from './TitleAccent.astro';
   <div>
     <Button variant="secondary">
       <p class="btn-text">Registration will open February 1!</p>
-      <img src={stopwatchIcon.src} alt="stopwatch" />
+      <Image src={stopwatchIcon} alt="stopwatch" />
     </Button>
     <span>
       Stay tuned! In the meantime, follow
@@ -42,6 +44,7 @@ import TitleAccent from './TitleAccent.astro';
       on Instagram for updates.
     </span>
   </div>
+  <Image class="arrows" src={arrowsIcon} alt="arrows" />
 </section>
 
 <style lang="scss">
@@ -53,6 +56,7 @@ import TitleAccent from './TitleAccent.astro';
     align-items: center;
     width: 862px; // fixed width for now
     margin: auto;
+    padding-bottom: 50px;
     text-align: center;
     gap: 20px;
 
@@ -71,5 +75,30 @@ import TitleAccent from './TitleAccent.astro';
   .btn-text {
     width: max-content;
     font-size: 1.25rem;
+  }
+
+  // arrow scroll indication
+  .arrows {
+    position: absolute;
+    bottom: 5svh;
+    animation: bounce 5s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    10%,
+    25%,
+    40%,
+    50% {
+      transform: translateY(0);
+    }
+
+    20% {
+      transform: translateY(-20px);
+    }
+
+    30% {
+      transform: translateY(-10px);
+    }
   }
 </style>
