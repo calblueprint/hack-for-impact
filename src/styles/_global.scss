@@ -50,11 +50,6 @@ p {
   line-height: 150%;
 }
 
-b {
-  @extend p;
-  font-weight: 700;
-}
-
 span {
   font-size: 0.875rem;
 }
