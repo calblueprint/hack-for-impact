@@ -3,6 +3,7 @@
 
 README.md
 
+src/env.d.ts
 .eslintrc.cjs
 .prettierrc.cjs
 astro.config.mjs

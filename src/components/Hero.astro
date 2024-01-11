@@ -1,62 +1,104 @@
-<div class="container">
-  <main>
-    <div>
-      <h3>Cal Hacks x Blueprint</h3>
-      <h1>Hack for Impact</h1>
-      <div class="spacer"></div>
-    </div>
-    <div>
-      <h2>February 25, 2024</h2>
-      <p>Pauley Ballroom @ University of California, Berkeley</p>
-      <p class="spacer">
-        We are connecting a community of leaders, creators, and change makers to
-        tackle social challenges.
-      </p>
-      <h4 class="spacer">
-        Registration is opening soon — stay tuned! In the meantime, follow
-        @calblueprint and @calhacks on Instagram for updates.
-      </h4>
-    </div>
-  </main>
-  <aside></aside>
-</div>
+---
+import { Image } from 'astro:assets';
+import Button from './Button.astro';
+import TitleAccent from './TitleAccent.astro';
+import stopwatchIcon from '../graphics/stopwatch.svg';
+import arrowsIcon from '../graphics/arrows.svg';
+---
+
+<section>
+  <h4>FEBRUARY 25, 2024 @ UNIVERSITY OF CALIFORNIA, BERKELEY</h4>
+  <h1>
+    Hack for Impact 2024 connects a community of
+    <TitleAccent
+      words={['change-makers', 'leaders', 'creators', 'visionaries']}
+    />
+    to tackle social challenges
+  </h1>
+  <div>
+    <Button variant="secondary">
+      <p class="btn-text">Registration will open February 1!</p>
+      <Image src={stopwatchIcon} alt="stopwatch" />
+    </Button>
+    <span>
+      Stay tuned! In the meantime, follow
+
+      <a
+        href="https://www.instagram.com/calblueprint/"
+        target="_blank"
+        referrerpolicy="no-referrer"
+      >
+        @calblueprint
+      </a>
+
+      and
+
+      <a
+        href="https://www.instagram.com/calhacks/"
+        target="_blank"
+        referrerpolicy="no-referrer"
+      >
+        @calhacks
+      </a>
+
+      on Instagram for updates.
+    </span>
+  </div>
+  <Image class="arrows" src={arrowsIcon} alt="arrows" />
+</section>
 
 <style lang="scss">
-  @use '../styles/breakpoints';
+  @use '../styles/colors';
 
-  .container {
+  section {
     display: flex;
-    flex-grow: 1;
-    width: 100%;
-    padding-left: 1rem;
-    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 862px; // fixed width for now
+    margin: auto;
+    padding-bottom: 50px;
+    text-align: center;
+    gap: 20px;
 
-    @media (min-width: breakpoints.$laptop) {
-      padding: 0 5rem 5rem 5rem;
+    h1 {
+      margin: 0.5rem 0;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      width: min-content;
+      gap: 20px;
     }
   }
 
-  main {
-    margin: auto 0;
+  .btn-text {
+    width: max-content;
+    font-size: 1.25rem;
+  }
 
-    div:last-child {
-      width: 60%;
+  // arrow scroll indication
+  .arrows {
+    position: absolute;
+    bottom: 5svh;
+    animation: bounce 5s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    10%,
+    25%,
+    40%,
+    50% {
+      transform: translateY(0);
     }
-  }
 
-  div.spacer {
-    height: 0.5rem;
-
-    @media (min-width: breakpoints.$phone) {
-      visibility: hidden;
+    20% {
+      transform: translateY(-20px);
     }
-  }
 
-  p.spacer {
-    margin-top: 1.5rem;
-  }
-
-  h4.spacer {
-    margin-top: 4rem;
+    30% {
+      transform: translateY(-10px);
+    }
   }
 </style>
