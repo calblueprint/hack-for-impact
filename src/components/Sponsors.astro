@@ -16,12 +16,24 @@ import witiLogo from '../graphics/sponsors/witi.webp';
   </div>
 
   <div class="sponsors-container">
-    <Image src={citrisLogo} alt="CITRIS and the Banatao Institute" />
-    <Image src={wealthfrontLogo} alt="Wealthfront" />
-    <Image src={bstfLogo} alt="Berkeley Student Technology Fund" />
-    <Image src={notionLogo} alt="Notion" />
-    <Image src={ffwdLogo} alt="Fast Forward" />
-    <Image src={witiLogo} alt="Women in Tech Initiaive" />
+    <a href="https://citris-uc.org/" target="_blank">
+      <Image src={citrisLogo} alt="CITRIS and the Banatao Institute" />
+    </a>
+    <a href="https://www.wealthfront.com/" target="_blank">
+      <Image src={wealthfrontLogo} alt="Wealthfront" />
+    </a>
+    <a href="https://techfund.berkeley.edu/home" target="_blank">
+      <Image src={bstfLogo} alt="Berkeley Student Technology Fund" />
+    </a>
+    <a href="https://www.notion.so/product" target="_blank">
+      <Image src={notionLogo} alt="Notion" />
+    </a>
+    <a href="https://www.ffwd.org/" target="_blank">
+      <Image src={ffwdLogo} alt="Fast Forward" />
+    </a>
+    <a href="https://citris-uc.org/research/edge-in-tech-initiative/" target="_blank">
+      <Image src={witiLogo} alt="Women in Tech Initiaive" />
+    </a>
   </div>
 </section>
 
@@ -58,6 +70,14 @@ import witiLogo from '../graphics/sponsors/witi.webp';
       gap: 6px 80px;
       flex-shrink: 0;
       flex-wrap: wrap;
+
+      a {
+        transition: 200ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.025);
+        }
+      }
 
       img {
         height: 100px;
