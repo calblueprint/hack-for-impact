@@ -11,17 +11,17 @@ interface Props {
 const { name, description, image, startColor, endColor, url } = Astro.props;
 ---
 
-<div class="card">
+<a class="card" href={url || null} target="_blank">
   <div class="bg"></div>
-  <a href={url || null} target="_blank">
+  <div class="content">
     <h3>
       {name}
     </h3>
     <p>
       {description}
     </p>
-  </a>
-</div>
+  </div>
+</a>
 
 <style
   lang="scss"
@@ -49,11 +49,12 @@ const { name, description, image, startColor, endColor, url } = Astro.props;
       transition: transform 0.225s ease-in-out;
     }
 
-    &:hover > .bg {
+    &:hover > .bg,
+    &:focus-visible > .bg {
       transform: scale(1.05);
     }
 
-    a {
+    .content {
       width: 100%;
       padding-top: 160px;
       padding: 32px;

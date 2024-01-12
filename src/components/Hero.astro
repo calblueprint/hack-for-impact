@@ -4,6 +4,8 @@ import Button from './Button.astro';
 import TitleAccent from './TitleAccent.astro';
 import stopwatchIcon from '../graphics/stopwatch.svg';
 import arrowsIcon from '../graphics/arrows.svg';
+import heroGraphicLeft from '../graphics/hero_left.svg';
+import heroGraphicRight from '../graphics/hero_right.svg';
 ---
 
 <section>
@@ -34,13 +36,26 @@ import arrowsIcon from '../graphics/arrows.svg';
       <a
         href="https://www.instagram.com/calhacks/"
         target="_blank"
-        referrerpolicy="no-referrer"
-      >@calhacks</a>
+        referrerpolicy="no-referrer">@calhacks</a
+      >
 
       on Instagram for updates.
     </span>
   </div>
+
   <Image class="arrows" src={arrowsIcon} alt="arrows" />
+
+  <!-- graphics, positioned absolutely -->
+  <Image
+    class="hero-left"
+    src={heroGraphicLeft}
+    alt="super bear amongst clouds"
+  />
+  <Image
+    class="hero-right"
+    src={heroGraphicRight}
+    alt="super bear amongst clouds"
+  />
 </section>
 
 <style lang="scss">
@@ -50,14 +65,18 @@ import arrowsIcon from '../graphics/arrows.svg';
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 862px; // fixed width for now
-    margin: auto;
-    padding-bottom: 50px;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    padding: 0 16%;
     text-align: center;
     gap: 20px;
+    position: relative;
+    overflow-x: hidden;
 
     h1 {
       margin: 0.5rem 0;
+      width: 53.875rem;
     }
 
     div {
@@ -80,7 +99,7 @@ import arrowsIcon from '../graphics/arrows.svg';
   // arrow scroll indication
   .arrows {
     position: absolute;
-    bottom: 5svh;
+    bottom: 4svh;
     animation: bounce 5s ease infinite;
   }
 
@@ -100,5 +119,20 @@ import arrowsIcon from '../graphics/arrows.svg';
     30% {
       transform: translateY(-10px);
     }
+  }
+
+  // graphics
+  .hero-left {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 25%;
+  }
+
+  .hero-right {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    width: 25%;
   }
 </style>
