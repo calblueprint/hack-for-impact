@@ -6,5 +6,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [react()],
   site: 'https://calblueprint.github.io',
-  base: 'hack-for-impact'
+  base: '/hack-for-impact'
 });
