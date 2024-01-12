@@ -1,1 +1,123 @@
-<section></section>
+<section id="schedule">
+  <div class="header-container">
+    <h4>SCHEDULE</h4>
+    <h3>1 day, but <b>countless</b> possibilities</h3>
+    <p>
+      From workshops to speaker events, we are dedicated to creating an
+      inclusive environment where hackers of all experience levels feel
+      empowered to build something they’re proud of
+    </p>
+  </div>
+
+  <table class="schedule-container">
+    <tr>
+      <td class="time">8:00 - 8:30 am</td>
+      <td class="event">Registration + breakfast</td>
+    </tr>
+    <tr>
+      <td class="time">8:30 - 8:50 am</td>
+      <td class="event">Welcoming note</td>
+    </tr>
+    <tr>
+      <td class="time">9:00 am</td>
+      <td class="event">Hacking begins</td>
+    </tr>
+    <tr>
+      <td class="time">9:00 - 9:30 am</td>
+      <td class="event">Team mixer (optional)</td>
+    </tr>
+    <tr>
+      <td class="time">9:30 - 10:00 am</td>
+      <td class="event">Speaker - Research & Design</td>
+    </tr>
+    <tr>
+      <td class="time">10:00 - 11:00 am</td>
+      <td class="event">Workshop – Wireframing with Figma</td>
+    </tr>
+    <tr>
+      <td class="time">11:00 - 12:00 pm</td>
+      <td class="event">Workshop – Low-code development</td>
+    </tr>
+    <tr>
+      <td class="time">12:00 - 1:00 pm</td>
+      <td class="event">Lunch break</td>
+    </tr>
+    <tr>
+      <td class="time">1:00 - 2:00 pm</td>
+      <td class="event">Workshop – TBD</td>
+    </tr>
+    <tr>
+      <td class="time">3:00 - 4:00 pm</td>
+      <td class="event">Speaker – Olaf Groth @ cambrian.ai</td>
+    </tr>
+    <tr>
+      <td class="time">5:00 - 6:30 pm</td>
+      <td class="event">Hackathon expo, judging begins!</td>
+    </tr>
+    <tr>
+      <td class="time">6:30 - 7:00 pm</td>
+      <td class="event">Dinner break</td>
+    </tr>
+    <tr>
+      <td class="time">7:00 - 8:00 pm</td>
+      <td class="event">Workshop – TBD</td>
+    </tr>
+    <tr>
+      <td class="time">8:00 - 9:00 pm</td>
+      <td class="event">Prizes + closing remarks</td>
+    </tr>
+  </table>
+</section>
+
+<style lang="scss">
+  @use '../styles/fonts';
+  #schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.12rem;
+    padding-top: 11.25rem;
+
+    .header-container {
+      display: flex;
+      width: 46.5rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+
+      b {
+        font-family: fonts.$serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 150%;
+      }
+    }
+
+    .schedule-container {
+      padding-left: 15.75rem;
+      padding-right: 15.75rem;
+      flex-shrink: 0;
+      border-radius: 1rem; /* Nonzero border radius with hidden */
+      overflow: hidden; /* overflow got rid of table's outer border */
+      .time {
+        width: 15.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 3.5rem;
+        text-align: right;
+        padding-right: 1.5rem;
+      }
+      .event {
+        width: 35.9375rem;
+        padding-left: 3rem;
+      }
+    }
+    table,
+    th,
+    td {
+      border: 1px solid #dfd2c4;
+      border-collapse: collapse;
+    }
+  }
+</style>
