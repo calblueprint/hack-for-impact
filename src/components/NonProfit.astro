@@ -1,0 +1,46 @@
+---
+const { name, description, image, startColor, endColor, url } = Astro.props;
+---
+
+<a class="card" href={url || "#"} target="_blank">
+  <h3>
+    {name}
+  </h3>
+  {description}
+</a>
+
+<style lang="scss" define:vars={{ image: `url(${image})`, startColor, endColor }}>
+  @use '../styles/breakpoints';
+  @use '../styles/colors';
+
+  .card {
+    background-image: linear-gradient(var(--startColor), var(--endColor)), var(--image);
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px; 
+    padding: 32px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px; 
+    padding-top: 180px;
+    height: 360px;
+    color: white;
+    font-weight: 400;
+    line-height: 100%;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform .225s ease-in-out;
+  }
+  
+  .card:hover > h3 {
+    text-decoration: underline;
+  }
+  
+  h3 {
+    font-family: "new-spirit", serif;
+    line-height: 1;
+  }
+</style>
