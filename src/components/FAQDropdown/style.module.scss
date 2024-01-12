@@ -1,0 +1,38 @@
+@use '../../styles/breakpoints';
+@use '../../styles/colors';
+@use '../../styles/global';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.labelContainer {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+
+  .statusIcon {
+    font-size: 1.5rem;
+    text-align: center;
+    user-select: none;
+    width: 1rem;
+  }
+
+  b {
+    font-size: 1rem;
+  }
+}
+
+.content {
+  display: flex;
+  margin-left: 2.75rem;
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+  }
+}
