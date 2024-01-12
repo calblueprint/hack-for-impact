@@ -1,12 +1,23 @@
 ---
+interface Props {
+  name: string;
+  description: string;
+  image: string;
+  startColor: string;
+  endColor: string;
+  url?: string;
+}
+
 const { name, description, image, startColor, endColor, url } = Astro.props;
 ---
 
-<a class="card" href={url || '#'} target="_blank">
+<a class="card" href={url || null} target="_blank">
   <h3>
     {name}
   </h3>
-  {description}
+  <p>
+    {description}
+  </p>
 </a>
 
 <style
@@ -27,15 +38,20 @@ const { name, description, image, startColor, endColor, url } = Astro.props;
     flex-direction: column;
     justify-content: flex-end;
     gap: 12px;
-    padding-top: 180px;
-    height: 360px;
+    width: 100%;
+    padding-top: 160px;
     color: white;
     font-weight: 400;
     line-height: 100%;
     transition: transform 0.225s ease-in-out;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.025);
+    }
+
+    @media (min-width: breakpoints.$laptop) {
+      padding-top: 0;
+      aspect-ratio: 10 / 9;
     }
   }
 
@@ -46,5 +62,9 @@ const { name, description, image, startColor, endColor, url } = Astro.props;
   h3 {
     font-family: 'new-spirit', serif;
     line-height: 1;
+  }
+
+  p {
+    font-weight: 400;
   }
 </style>

@@ -101,7 +101,8 @@ const faqsCol2 = faqs.slice(split);
 </section>
 
 <style lang="scss">
-  @use '../styles/_fonts.scss';
+  @use '../styles/fonts';
+  @use '../styles/breakpoints';
 
   #faq {
     display: flex;
@@ -127,15 +128,22 @@ const faqsCol2 = faqs.slice(split);
   .faq-content {
     display: flex;
     gap: 32px;
-    width: 62rem;
+    width: 100%;
+    flex-direction: column;
     align-items: flex-start;
     margin: 0 auto;
+
+    @media (min-width: breakpoints.$laptop) {
+      width: 900px;
+      flex-direction: row;
+    }
   }
+
   .faq-container {
     display: flex;
     flex-direction: column;
     gap: 35px;
-    width: 50%;
+    flex: 1;
     padding: 0 0.7rem;
   }
 </style>
