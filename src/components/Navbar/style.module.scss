@@ -74,6 +74,10 @@ nav {
 
 .links a {
   color: colors.$text;
+
+  h5:hover {
+    text-decoration-line: underline;
+  }
 }
 
 .mobileLinks {
