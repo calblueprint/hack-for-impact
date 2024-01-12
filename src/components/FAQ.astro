@@ -73,9 +73,9 @@ const faqsCol1 = faqs.slice(0, split);
 const faqsCol2 = faqs.slice(split);
 ---
 
-<section id="faq">
+<section>
   <div class="faq-headers">
-    <h4>FAQ</h4>
+    <h4 id="faq">FAQ</h4>
     <h2>
       Frequently asked questions <span>– we've got the answers</span>
     </h2>
@@ -101,13 +101,15 @@ const faqsCol2 = faqs.slice(split);
 </section>
 
 <style lang="scss">
-  @use '../styles/_fonts.scss';
+  @use '../styles/fonts';
+  @use '../styles/breakpoints';
 
-  #faq {
+  section {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    margin: 10rem auto 0;
+    width: 100%;
+    margin: 160px auto 0;
   }
 
   .faq-headers {
@@ -127,15 +129,22 @@ const faqsCol2 = faqs.slice(split);
   .faq-content {
     display: flex;
     gap: 32px;
-    width: 62rem;
+    width: 100%;
+    flex-direction: column;
     align-items: flex-start;
     margin: 0 auto;
+
+    @media (min-width: breakpoints.$laptop) {
+      width: 900px;
+      flex-direction: row;
+    }
   }
+
   .faq-container {
     display: flex;
     flex-direction: column;
     gap: 35px;
-    width: 50%;
+    flex: 1;
     padding: 0 0.7rem;
   }
 </style>

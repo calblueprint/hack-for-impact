@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import working from '../graphics/about/working.webp';
-import crowdLarge from '../graphics/about/crowd-large.webp';
+import crowdLarge from '../graphics/about/crowd_large.webp';
 import fourppl from '../graphics/about/fourppl.webp';
 import bear from '../graphics/about/bear.webp';
-import annie from '../graphics/about/anniew.webp';
+import tools from '../graphics/about/tools.webp';
 import crowd from '../graphics/about/crowd.webp';
 ---
 
@@ -26,13 +26,13 @@ import crowd from '../graphics/about/crowd.webp';
       src={crowdLarge}
       alt="Large group of people coding at hackathon"
     />
-    <Image class="img" src={fourppl} alt="Picture of Calhacks members" />
+    <Image class="img" src={fourppl} alt="Picture of CalHacks members" />
     <Image
       class="img"
       src={bear}
       alt="Hackathon attendees posing with stuffed bear"
     />
-    <Image class="img" src={annie} alt="Girl with tools" />
+    <Image class="img" src={tools} alt="Girl with tools" />
     <Image
       class="img"
       src={crowd}
@@ -86,6 +86,7 @@ import crowd from '../graphics/about/crowd.webp';
   @use '../styles/fonts';
 
   section {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,5 +168,6 @@ import crowd from '../graphics/about/crowd.webp';
     border-radius: 8px;
     width: 264px;
     height: 171px;
+    object-fit: cover;
   }
 </style>

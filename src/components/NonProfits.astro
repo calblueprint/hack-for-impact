@@ -2,56 +2,60 @@
 import NonProfit from './NonProfit.astro';
 ---
 
-<section class="lead" id="nonprofits">
-  <h4>NON-PROFITS</h4>
-  <h3>We’re a hackathon with <b class="emphasis">social good</b> at its heart.</h3>
+<section class="lead">
+  <h4 id="nonprofits">NON-PROFITS</h4>
+  <h3>
+    We’re a hackathon with <b class="emphasis">social good</b> at its heart.
+  </h3>
   <p>
-    Our nonprofits have presented several problem areas and projects to tackle their most pressing needs. Here are the incredible organizations that we’ve partnered with:
+    Our nonprofits have presented several problem areas and projects to tackle
+    their most pressing needs. Here are the incredible organizations that we’ve
+    partnered with:
   </p>
 </section>
 
 <section class="nonprofits">
-  <NonProfit 
-    name="Bay Area Street Soccer" 
-    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S." 
+  <NonProfit
+    name="Bay Area Street Soccer"
+    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S."
     image="/nonprofits/street-soccer.webp"
     startColor="rgba(223, 114, 145, 0.3)"
     endColor="rgba(223, 114, 145, 1)"
     url="https://www.streetsoccerusa.org/cities/san-francisco/"
   />
-  <NonProfit 
-    name="1951 Coffee" 
-    description="Promoting the well-being of the refugee community in the U.S. through job training and employment" 
+  <NonProfit
+    name="1951 Coffee"
+    description="Promoting the well-being of the refugee community in the U.S. through job training and employment"
     image="/nonprofits/1951-coffee-company.webp"
     startColor="rgba(247, 207, 82, 0.3)"
     endColor="rgba(247, 207, 82, 1)"
     url="https://www.1951coffee.com/"
   />
-  <NonProfit 
-    name="The Dancing Cat" 
-    description="Animal rescue organization dedicated to saving at-risk cats from the San Jose Animal Care Center" 
+  <NonProfit
+    name="The Dancing Cat"
+    description="Animal rescue organization dedicated to saving at-risk cats from the San Jose Animal Care Center"
     image="/nonprofits/dancing-cat.webp"
     startColor="rgba(128, 211, 241, 0.3)"
     endColor="rgba(128, 211, 241, 1)"
     url="https://www.thedancingcat.org/"
   />
-  <NonProfit 
-    name="Coming soon..." 
-    description="This amazing nonprofit will be announced soon!" 
+  <NonProfit
+    name="Coming soon..."
+    description="This amazing nonprofit will be announced soon!"
     image="/nonprofits/coming-soon.webp"
     startColor="rgba(120, 120, 120, 0.3)"
     endColor="rgba(120, 120, 120, 1)"
   />
-  <NonProfit 
-    name="Coming soon..." 
-    description="This amazing nonprofit will be announced soon!" 
+  <NonProfit
+    name="Coming soon..."
+    description="This amazing nonprofit will be announced soon!"
     image="/nonprofits/coming-soon.webp"
     startColor="rgba(120, 120, 120, 0.3)"
     endColor="rgba(120, 120, 120, 1)"
   />
-  <NonProfit 
-    name="Coming soon..." 
-    description="This amazing nonprofit will be announced soon!" 
+  <NonProfit
+    name="Coming soon..."
+    description="This amazing nonprofit will be announced soon!"
     image="/nonprofits/coming-soon.webp"
     startColor="rgba(120, 120, 120, 0.3)"
     endColor="rgba(120, 120, 120, 1)"
@@ -61,47 +65,44 @@ import NonProfit from './NonProfit.astro';
 <style lang="scss">
   @use '../styles/breakpoints';
   @use '../styles/colors';
-  
+
   .lead {
     width: 100%;
     padding-left: 1rem;
     position: relative;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     gap: 16px;
     justify-content: center;
     text-align: center;
     color: colors.$text;
-  
+    padding-bottom: 2rem;
+    margin-top: 180px;
+
     @media (min-width: breakpoints.$laptop) {
-      padding: 0 5rem 2rem 5rem;
-      grid-template-columns: 1fr 1fr 1fr; 
-      max-width: 800px;
-      margin: auto;
+      padding: 0 20%;
+      padding-bottom: 80px;
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
-  
+
   .emphasis {
-    font-family: "new-spirit", serif;
+    font-family: 'new-spirit', serif;
     font-weight: 600;
   }
-  
 
   .nonprofits {
     width: 100%;
     padding-left: 1rem;
     position: relative;
-    display: grid; 
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: 1fr;
     gap: 24px;
 
     @media (min-width: breakpoints.$laptop) {
-      padding: 0 5rem 5rem 5rem;
-      grid-template-columns: 1fr 1fr 1fr; 
+      padding: 0 156px;
+      grid-template-columns: 1fr 1fr 1fr;
     }
-  }
-  
-  #nonprofits {
-    margin-top: 180px;
   }
 </style>
