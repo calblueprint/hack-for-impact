@@ -5,5 +5,5 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: 'https://calblueprint.github.io'
+  site: 'https://hackforimpact.calblueprint.org'
 });
