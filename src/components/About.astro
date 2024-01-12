@@ -1,11 +1,11 @@
 ---
 import { Image } from 'astro:assets';
-import working from '../graphics/working.webp';
-import crowdLarge from '../graphics/crowd-large.webp';
-import fourppl from '../graphics/fourppl.webp';
-import bear from '../graphics/bear.webp';
-import annie from '../graphics/anniew.webp';
-import crowd from '../graphics/crowd.webp';
+import working from '../graphics/about/working.webp';
+import crowdLarge from '../graphics/about/crowd-large.webp';
+import fourppl from '../graphics/about/fourppl.webp';
+import bear from '../graphics/about/bear.webp';
+import annie from '../graphics/about/anniew.webp';
+import crowd from '../graphics/about/crowd.webp';
 ---
 
 <section>
@@ -83,6 +83,8 @@ import crowd from '../graphics/crowd.webp';
 
 <style lang="scss">
   @use '../styles/colors';
+  @use '../styles/fonts';
+
   section {
     display: flex;
     flex-direction: column;
@@ -91,7 +93,9 @@ import crowd from '../graphics/crowd.webp';
     width: 100%;
     margin: 0 auto;
     padding-top: 5rem;
+    overflow-x: hidden;
   }
+
   div.spacer {
     height: 1.5rem;
   }
@@ -127,7 +131,7 @@ import crowd from '../graphics/crowd.webp';
   }
 
   div.text {
-    font: serif;
+    font-family: fonts.$serif;
     font-weight: 600;
     display: inline-block;
   }
@@ -145,23 +149,20 @@ import crowd from '../graphics/crowd.webp';
 
   div.header {
     display: inline-block;
+    width: 744px;
   }
 
   div.header h2 {
     display: inline-block;
   }
 
-  div.text {
-    font: serif;
-    font-weight: 600;
-    display: inline-block;
-  }
   div.imageRow {
     display: flex;
     align-items: flex-start;
     gap: 24px;
-    margin-top: 40px;
+    margin-top: 74px;
   }
+
   .img {
     border-radius: 8px;
     width: 264px;
