@@ -1,1 +1,84 @@
-<section></section>
+---
+import { Image } from 'astro:assets';
+import citrisLogo from '../graphics/sponsors/citris.webp';
+import wealthfrontLogo from '../graphics/sponsors/wealthfront.webp';
+import bstfLogo from '../graphics/sponsors/bstf.webp';
+import notionLogo from '../graphics/sponsors/notion.webp';
+import ffwdLogo from '../graphics/sponsors/ffwd.webp';
+import witiLogo from '../graphics/sponsors/witi.webp';
+---
+
+<section id="sponsors">
+  <div class="header-container">
+    <h4>SPONSORS & PARTNERS</h4>
+    <h3>A round of applause for our <b>past sponsors</b></h3>
+    <p>Stay tuned — Hack for Impact sponsors will be released soon!</p>
+  </div>
+
+  <div class="sponsors-container">
+    <div class="image-container">
+      <Image src={citrisLogo} alt="CITRIS and the Banatao Institute" />
+    </div>
+    <div class="image-container">
+      <Image src={wealthfrontLogo} alt="Wealthfront" />
+    </div>
+    <div class="image-container">
+      <Image src={bstfLogo} alt="Berkeley Student Technology Fund" />
+    </div>
+    <div class="image-container">
+      <Image src={notionLogo} alt="Notion" />
+    </div>
+    <div class="image-container">
+      <Image src={ffwdLogo} alt="Fast Forward" />
+    </div>
+    <div class="image-container">
+      <Image src={witiLogo} alt="Women in Tech Initiaive" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../styles/fonts';
+
+  #sponsors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    padding-top: 11.25rem;
+
+    .header-container {
+      display: flex;
+      width: 46.5rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      b {
+        font-family: fonts.$serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 150%;
+      }
+    }
+
+    .sponsors-container {
+      display: flex;
+      width: 48.125rem;
+      justify-content: center;
+      align-content: center;
+      gap: 3rem 5rem;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+
+      .image-container {
+        display: flex;
+        max-width: 13.75rem;
+        max-height: 6.25rem;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+    }
+  }
+</style>
