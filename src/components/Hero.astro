@@ -60,6 +60,7 @@ import heroGraphicRight from '../graphics/hero_right.svg';
 
 <style lang="scss">
   @use '../styles/colors';
+  @use '../styles/breakpoints';
 
   section {
     display: flex;
@@ -76,7 +77,11 @@ import heroGraphicRight from '../graphics/hero_right.svg';
 
     h1 {
       margin: 0.5rem 0;
-      width: 53.875rem;
+      font-size: clamp(1.25rem, 4vw, 3.25rem);
+
+      @media (min-width: breakpoints.$laptop) {
+        width: 53.875rem;
+      }
     }
 
     div {
@@ -123,16 +128,22 @@ import heroGraphicRight from '../graphics/hero_right.svg';
 
   // graphics
   .hero-left {
+    $offset: 200px;
+
     position: absolute;
-    left: 0;
+    left: -$offset;
     z-index: -1;
-    width: 25%;
+    height: 80%;
+    transform: translateX(min(12vw, $offset));
   }
 
   .hero-right {
+    $offset: 200px;
+
     position: absolute;
-    right: 0;
+    right: -$offset;
     z-index: -1;
-    width: 25%;
+    height: 80%;
+    transform: translateX(clamp(#{-$offset}, -12vw, 0px));
   }
 </style>

@@ -45,6 +45,7 @@ const longestWord = words.reduce((prev, curr) =>
 
   .ghost {
     visibility: hidden;
+    font-size: clamp(1.25rem, 4vw, 3.25rem);
   }
 
   // window
@@ -74,6 +75,7 @@ const longestWord = words.reduce((prev, curr) =>
       mix-blend-mode: multiply;
       text-align: center;
       width: 100%;
+      font-size: clamp(1.25rem, 4vw, 3.25rem);
 
       &.accent-1 {
         color: colors.$accent-red;
