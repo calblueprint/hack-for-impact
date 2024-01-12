@@ -16,24 +16,12 @@ import witiLogo from '../graphics/sponsors/witi.webp';
   </div>
 
   <div class="sponsors-container">
-    <div class="image-container">
-      <Image src={citrisLogo} alt="CITRIS and the Banatao Institute" />
-    </div>
-    <div class="image-container">
-      <Image src={wealthfrontLogo} alt="Wealthfront" />
-    </div>
-    <div class="image-container">
-      <Image src={bstfLogo} alt="Berkeley Student Technology Fund" />
-    </div>
-    <div class="image-container">
-      <Image src={notionLogo} alt="Notion" />
-    </div>
-    <div class="image-container">
-      <Image src={ffwdLogo} alt="Fast Forward" />
-    </div>
-    <div class="image-container">
-      <Image src={witiLogo} alt="Women in Tech Initiaive" />
-    </div>
+    <Image src={citrisLogo} alt="CITRIS and the Banatao Institute" />
+    <Image src={wealthfrontLogo} alt="Wealthfront" />
+    <Image src={bstfLogo} alt="Berkeley Student Technology Fund" />
+    <Image src={notionLogo} alt="Notion" />
+    <Image src={ffwdLogo} alt="Fast Forward" />
+    <Image src={witiLogo} alt="Women in Tech Initiaive" />
   </div>
 </section>
 
@@ -64,19 +52,17 @@ import witiLogo from '../graphics/sponsors/witi.webp';
 
     .sponsors-container {
       display: flex;
-      width: 48.125rem;
+      width: 770px;
       justify-content: center;
       align-content: center;
-      gap: 3rem 5rem;
+      gap: 6px 80px;
       flex-shrink: 0;
       flex-wrap: wrap;
 
-      .image-container {
-        display: flex;
-        max-width: 13.75rem;
-        max-height: 6.25rem;
-        justify-content: center;
-        align-items: center;
+      img {
+        height: 100px;
+        width: auto;
+        object-fit: cover;
         flex-shrink: 0;
       }
     }
