@@ -46,13 +46,19 @@ const FAQDropdown = ({ question, defaultOpen }: FAQDropdownProps) => {
     );
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleToggle();
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div
         className={styles.labelContainer}
         onClick={handleToggle}
         tabIndex={0}
-        onKeyUp={handleToggle}
+        onKeyDown={e => handleKeyDown(e)}
       >
         <div className={styles.statusIcon}>{isOpen ? '-' : '+'}</div>
         <b>{label}</b>
