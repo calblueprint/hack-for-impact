@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import bpLogo from '../graphics/bp.webp';
+import calHacksLogo from '../graphics/calhacks.webp';
+---
+
+<div>
+  <a href="https://calblueprint.org/" target="_blank">
+    <Image src={bpLogo} alt="Blueprint" />
+  </a>
+  <p>&</p>
+  <a href="https://calhacks.io/" target="_blank">
+    <Image src={calHacksLogo} alt="CalHacks" />
+  </a>
+</div>
+
+<style lang="scss">
+  div {
+    display: flex;
+    gap: 6px;
+    height: 50px;
+    align-items: center;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+    a,
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+</style>
