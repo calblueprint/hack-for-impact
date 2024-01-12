@@ -73,9 +73,9 @@ const faqsCol1 = faqs.slice(0, split);
 const faqsCol2 = faqs.slice(split);
 ---
 
-<section id="faq">
+<section>
   <div class="faq-headers">
-    <h4>FAQ</h4>
+    <h4 id="faq">FAQ</h4>
     <h2>
       Frequently asked questions <span>– we've got the answers</span>
     </h2>
@@ -104,11 +104,12 @@ const faqsCol2 = faqs.slice(split);
   @use '../styles/fonts';
   @use '../styles/breakpoints';
 
-  #faq {
+  section {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    margin: 10rem auto 0;
+    width: 100%;
+    margin: 160px auto 0;
   }
 
   .faq-headers {

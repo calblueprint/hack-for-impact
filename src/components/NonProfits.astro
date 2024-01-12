@@ -2,8 +2,8 @@
 import NonProfit from './NonProfit.astro';
 ---
 
-<section class="lead" id="nonprofits">
-  <h4>NON-PROFITS</h4>
+<section class="lead">
+  <h4 id="nonprofits">NON-PROFITS</h4>
   <h3>
     We’re a hackathon with <b class="emphasis">social good</b> at its heart.
   </h3>
@@ -77,12 +77,12 @@ import NonProfit from './NonProfit.astro';
     text-align: center;
     color: colors.$text;
     padding-bottom: 2rem;
+    margin-top: 180px;
 
     @media (min-width: breakpoints.$laptop) {
-      padding: 0 5rem 2rem 5rem;
+      padding: 0 20%;
+      padding-bottom: 80px;
       grid-template-columns: 1fr 1fr 1fr;
-      max-width: 800px;
-      margin: auto;
     }
   }
 
@@ -104,9 +104,5 @@ import NonProfit from './NonProfit.astro';
       padding: 0 156px;
       grid-template-columns: 1fr 1fr 1fr;
     }
-  }
-
-  #nonprofits {
-    margin-top: 180px;
   }
 </style>

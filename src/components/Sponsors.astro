@@ -8,9 +8,9 @@ import ffwdLogo from '../graphics/sponsors/ffwd.webp';
 import witiLogo from '../graphics/sponsors/witi.webp';
 ---
 
-<section id="sponsors">
+<section>
   <div class="header-container">
-    <h4>SPONSORS & PARTNERS</h4>
+    <h4 id="sponsors">SPONSORS & PARTNERS</h4>
     <h3>A round of applause for our <b>past sponsors</b></h3>
     <p>Stay tuned — Hack for Impact sponsors will be released soon!</p>
   </div>
@@ -31,7 +31,10 @@ import witiLogo from '../graphics/sponsors/witi.webp';
     <a href="https://www.ffwd.org/" target="_blank">
       <Image src={ffwdLogo} alt="Fast Forward" />
     </a>
-    <a href="https://citris-uc.org/research/edge-in-tech-initiative/" target="_blank">
+    <a
+      href="https://citris-uc.org/research/edge-in-tech-initiative/"
+      target="_blank"
+    >
       <Image src={witiLogo} alt="Women in Tech Initiaive" />
     </a>
   </div>
@@ -40,7 +43,8 @@ import witiLogo from '../graphics/sponsors/witi.webp';
 <style lang="scss">
   @use '../styles/fonts';
 
-  #sponsors {
+  section {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
