@@ -4,8 +4,10 @@ import Button from './Button.astro';
 import TitleAccent from './TitleAccent.astro';
 import stopwatchIcon from '../graphics/stopwatch.svg';
 import arrowsIcon from '../graphics/arrows.svg';
-import heroGraphicLeft from '../graphics/hero_left.svg';
-import heroGraphicRight from '../graphics/hero_right.svg';
+import heroGraphicLeft from '../graphics/hero_shapes_left.svg';
+import heroGraphicRight from '../graphics/hero_shapes_right.svg';
+import bearLeft from '../graphics/bear_orange.svg';
+import bearRight from '../graphics/bear_blue.svg';
 ---
 
 <section>
@@ -17,7 +19,7 @@ import heroGraphicRight from '../graphics/hero_right.svg';
     />
     to tackle social challenges
   </h1>
-  <div>
+  <article>
     <Button variant="secondary">
       <p class="btn-text">Registration will open February 1!</p>
       <Image src={stopwatchIcon} alt="stopwatch" />
@@ -41,21 +43,27 @@ import heroGraphicRight from '../graphics/hero_right.svg';
 
       on Instagram for updates.
     </span>
-  </div>
+  </article>
 
   <Image class="arrows" src={arrowsIcon} alt="arrows" />
 
   <!-- graphics, positioned absolutely -->
-  <Image
-    class="hero-left"
-    src={heroGraphicLeft}
-    alt="super bear amongst clouds"
-  />
-  <Image
-    class="hero-right"
-    src={heroGraphicRight}
-    alt="super bear amongst clouds"
-  />
+  <div class="parallax">
+    <div class="parallax-group">
+      <div class="parallax-normal">
+        <Image class="bear-left" src={bearLeft} alt="bear with cape" />
+        <Image class="bear-right" src={bearRight} alt="bear with cape" />
+      </div>
+      <div class="parallax-slow">
+        <Image class="hero-left" src={heroGraphicLeft} alt="clouds and stars" />
+        <Image
+          class="hero-right"
+          src={heroGraphicRight}
+          alt="clouds and sparkles"
+        />
+      </div>
+    </div>
+  </div>
 </section>
 
 <style lang="scss">
@@ -73,7 +81,6 @@ import heroGraphicRight from '../graphics/hero_right.svg';
     text-align: center;
     gap: 20px;
     position: relative;
-    overflow-x: hidden;
 
     h1 {
       margin: 0.5rem 0;
@@ -84,7 +91,7 @@ import heroGraphicRight from '../graphics/hero_right.svg';
       }
     }
 
-    div {
+    article {
       display: flex;
       flex-direction: column;
       width: min-content;
@@ -126,24 +133,87 @@ import heroGraphicRight from '../graphics/hero_right.svg';
     }
   }
 
-  // graphics
-  .hero-left {
-    $offset: 200px;
-
+  // bg graphic parallax
+  // kudos to https://keithclark.co.uk/articles/pure-css-parallax-websites/ (1/12/2024)
+  .parallax {
     position: absolute;
-    left: -$offset;
+    width: 100%;
+    height: 100svh;
+    perspective: 1px;
+    overflow: hidden;
     z-index: -1;
-    height: 80%;
-    transform: translateX(min(12vw, $offset));
-  }
 
-  .hero-right {
-    $offset: 200px;
+    .parallax-group {
+      position: relative;
+      height: 100svh;
+      transform-style: preserve-3d;
 
-    position: absolute;
-    right: -$offset;
-    z-index: -1;
-    height: 80%;
-    transform: translateX(clamp(#{-$offset}, -12vw, 0px));
+      div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .parallax-normal {
+      transform: translateZ(0);
+    }
+
+    .parallax-slow {
+      transform: translateZ(-1px) scale(2);
+    }
+
+    // positioning graphics
+    $offset-left: 200px;
+    $offset-right: 200px;
+
+    .hero-left {
+      position: absolute;
+      left: -$offset-left;
+      top: 50%;
+      z-index: -1;
+      height: 80%;
+      transform: translateX(min(12vw, $offset-left)) translateY(-50%);
+    }
+
+    .hero-right {
+      position: absolute;
+      right: -$offset-right;
+      top: 50%;
+      z-index: -1;
+      height: 80%;
+      transform: translateX(clamp(#{-$offset-right}, -12vw, 0px))
+        translateY(-50%);
+    }
+
+    .bear-left {
+      position: absolute;
+      left: -$offset-left;
+      top: 50%;
+      transform: translate(
+        calc(10px + min(12vw, $offset-left)),
+        calc(70px - 50%)
+      );
+    }
+
+    .bear-right {
+      position: absolute;
+      right: -$offset-right;
+      top: 50%;
+      transform: translate(
+        calc(25px + clamp(#{-$offset-right}, -12vw, 0px)),
+        calc(-160px - 50%)
+      );
+    }
   }
 </style>
+
+<script>
+  const heroParallax = document.querySelector('.parallax');
+
+  window.addEventListener('scroll', () => {
+    if (heroParallax) heroParallax.scrollTop = window.scrollY / 4;
+  });
+</script>
