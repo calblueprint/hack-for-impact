@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import shapes from '../graphics/shapes_twirl_2.svg';
+---
+
 <section>
   <h4 id="contact">CONTACT US</h4>
   <div class="spacer"></div>
@@ -18,6 +23,7 @@
     if you need a particular accommodation. Note that requests made less than 24
     hours before the event will likely not be accommodated.
   </p>
+  <Image class="img" src={shapes} alt="" />
 </section>
 
 <style lang="scss">
@@ -48,5 +54,12 @@
   a.email {
     text-decoration-line: underline; // the underline is too close to the text...
     text-underline-offset: 2px;
+  }
+
+  .img {
+    position: absolute;
+    right: 0; 
+    top: 73px;
+    z-index: -1;
   }
 </style>
