@@ -1,10 +1,13 @@
 ---
 import NonProfit from './NonProfit.astro';
+import { Image } from 'astro:assets';
+import sparkles from '../graphics/shapes_sparkle_2.svg';
+import clouds from '../graphics/clouds_star_twirl_2.svg';
 ---
 
 <div class="container">
-  <img src="/shapes_sparkle_2.svg" class="sparkles" alt="" />
-  <img src="/clouds_star_twirl_2.svg" class="clouds" alt="" />
+  <Image src={sparkles} class="sparkles" alt="" />
+  <Image src={clouds} class="clouds" alt="" />
   <section class="lead">
     <h4 id="nonprofits">NON-PROFITS</h4>
     <h3>
@@ -122,7 +125,7 @@ import NonProfit from './NonProfit.astro';
     display: none;
     position: absolute;
     top: 72px;
-    right: 0;
+    right: -60px;
     height: 120px;
     @media (min-width: breakpoints.$laptop) {
       display: block;
