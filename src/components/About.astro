@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import working from '../graphics/about/working.webp';
+import shapes from '../graphics/clouds_star_twirl_1.svg';
 import crowdLarge from '../graphics/about/crowd_large.webp';
 import fourppl from '../graphics/about/fourppl.webp';
 import bear from '../graphics/about/bear.webp';
@@ -40,6 +41,7 @@ import crowd from '../graphics/about/crowd.webp';
     />
   </div>
 
+  <Image class="shape" src={shapes} alt="" />
   <div class="mission-vision">
     <div class="bigRow">
       <h2 class="left">Our Vision</h2>
@@ -169,5 +171,11 @@ import crowd from '../graphics/about/crowd.webp';
     width: 264px;
     height: 171px;
     object-fit: cover;
+  }
+
+  .shape {
+    position: absolute;
+    left: 0px;
+    bottom: 88px;
   }
 </style>
