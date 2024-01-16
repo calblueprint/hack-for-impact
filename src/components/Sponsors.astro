@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+import clouds from '../graphics/clouds_stars.svg';
+import sheep from '../graphics/sheep.svg';
 import citrisLogo from '../graphics/sponsors/citris.webp';
 import wealthfrontLogo from '../graphics/sponsors/wealthfront.webp';
 import bstfLogo from '../graphics/sponsors/bstf.webp';
@@ -31,13 +33,13 @@ import witiLogo from '../graphics/sponsors/witi.webp';
     <a href="https://www.ffwd.org/" target="_blank">
       <Image src={ffwdLogo} alt="Fast Forward" />
     </a>
-    <a
-      href="https://citris-uc.org/research/edge-in-tech-initiative/"
-      target="_blank"
-    >
+    <a href="https://edge.berkeley.edu" target="_blank">
       <Image src={witiLogo} alt="Women in Tech Initiaive" />
     </a>
   </div>
+
+  <Image class="clouds" src={clouds} alt="clouds and stars" />
+  <Image class="sheep" src={sheep} alt="sheep" />
 </section>
 
 <style lang="scss">
@@ -89,6 +91,20 @@ import witiLogo from '../graphics/sponsors/witi.webp';
         object-fit: cover;
         flex-shrink: 0;
       }
+    }
+
+    .clouds {
+      position: absolute;
+      left: 0;
+      bottom: -6rem;
+      z-index: -1;
+    }
+
+    .sheep {
+      position: absolute;
+      right: 0;
+      top: 4rem;
+      z-index: -1;
     }
   }
 </style>
