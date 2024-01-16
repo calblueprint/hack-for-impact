@@ -8,6 +8,7 @@ import heroGraphicLeft from '../graphics/hero_shapes_left.svg';
 import heroGraphicRight from '../graphics/hero_shapes_right.svg';
 import bearLeft from '../graphics/bear_orange.svg';
 import bearRight from '../graphics/bear_blue.svg';
+import Brand from './Brand.astro';
 ---
 
 <section>
@@ -48,19 +49,20 @@ import bearRight from '../graphics/bear_blue.svg';
   <Image class="arrows" src={arrowsIcon} alt="arrows" />
 
   <!-- graphics, positioned absolutely -->
-  <div class="parallax">
+  <div class="parallax-container">
     <div class="parallax-group">
-      <div class="parallax-normal">
+      <div class="parallax parallax-normal">
         <Image class="bear-left" src={bearLeft} alt="bear with cape" />
         <Image class="bear-right" src={bearRight} alt="bear with cape" />
       </div>
-      <div class="parallax-slow">
+      <div class="parallax parallax-slow">
         <Image class="hero-left" src={heroGraphicLeft} alt="clouds and stars" />
         <Image
           class="hero-right"
           src={heroGraphicRight}
           alt="clouds and sparkles"
         />
+        <Brand class="hero-brand" />
       </div>
     </div>
   </div>
@@ -135,7 +137,7 @@ import bearRight from '../graphics/bear_blue.svg';
 
   // bg graphic parallax
   // kudos to https://keithclark.co.uk/articles/pure-css-parallax-websites/ (1/12/2024)
-  .parallax {
+  .parallax-container {
     position: absolute;
     width: 100%;
     height: 100svh;
@@ -148,7 +150,7 @@ import bearRight from '../graphics/bear_blue.svg';
       height: 100svh;
       transform-style: preserve-3d;
 
-      div {
+      .parallax {
         position: absolute;
         top: 0;
         left: 0;
@@ -188,6 +190,17 @@ import bearRight from '../graphics/bear_blue.svg';
         translateY(-50%);
     }
 
+    .hero-brand {
+      $offset: 50px;
+      position: absolute;
+      right: -$offset;
+      top: 50%;
+      transform: translate(
+        calc(clamp(#{-$offset}, -12vw, 0px) - 10px),
+        calc(50% + 150px)
+      );
+    }
+
     .bear-left {
       position: absolute;
       left: -$offset-left;
@@ -211,7 +224,7 @@ import bearRight from '../graphics/bear_blue.svg';
 </style>
 
 <script>
-  const heroParallax = document.querySelector('.parallax');
+  const heroParallax = document.querySelector('.parallax-container');
 
   window.addEventListener('scroll', () => {
     if (heroParallax) heroParallax.scrollTop = window.scrollY / 4;

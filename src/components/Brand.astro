@@ -2,9 +2,11 @@
 import { Image } from 'astro:assets';
 import bpLogo from '../graphics/bp.webp';
 import calHacksLogo from '../graphics/calhacks.webp';
+
+const props = Astro.props;
 ---
 
-<div>
+<div {...props}>
   <a href="https://calblueprint.org/" target="_blank">
     <Image src={bpLogo} alt="Blueprint" />
   </a>
