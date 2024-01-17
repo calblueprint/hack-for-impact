@@ -15,11 +15,11 @@ import clouds from '../graphics/clouds_star_twirl_2.svg';
     </h3>
     <p>
       Our nonprofits have presented several problem areas and projects to tackle
-      their most pressing needs. Here are the incredible organizations that we’ve
-      partnered with:
+      their most pressing needs. Here are the incredible organizations that
+      we’ve partnered with:
     </p>
   </section>
-  
+
   <section class="nonprofits">
     <NonProfit
       name="Bay Area Street Soccer"
@@ -116,11 +116,12 @@ import clouds from '../graphics/clouds_star_twirl_2.svg';
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
-  
+
   .container {
     position: relative;
+    overflow-x: hidden;
   }
-  
+
   .clouds {
     display: none;
     position: absolute;
@@ -131,7 +132,7 @@ import clouds from '../graphics/clouds_star_twirl_2.svg';
       display: block;
     }
   }
-  
+
   .sparkles {
     display: none;
     position: absolute;
