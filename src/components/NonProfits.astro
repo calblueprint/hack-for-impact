@@ -1,73 +1,80 @@
 ---
 import NonProfit from './NonProfit.astro';
+import { Image } from 'astro:assets';
+import sparkles from '../graphics/shapes_sparkle_2.svg';
+import clouds from '../graphics/clouds_star_twirl_2.svg';
 ---
 
-<section class="lead">
-  <h4 id="nonprofits">NON-PROFITS</h4>
-  <h3>
-    We’re a hackathon with <b class="emphasis">social good</b> at its heart.
-  </h3>
-  <p>
-    Our nonprofits have presented several problem areas and projects to tackle
-    their most pressing needs. Here are the incredible organizations that we’ve
-    partnered with:
-  </p>
-</section>
+<div class="container">
+  <Image src={sparkles} class="sparkles" alt="" />
+  <Image src={clouds} class="clouds" alt="" />
+  <section class="lead">
+    <h4 id="nonprofits">NON-PROFITS</h4>
+    <h3>
+      We’re a hackathon with <b class="emphasis">social good</b> at its heart.
+    </h3>
+    <p>
+      Our nonprofits have presented several problem areas and projects to tackle
+      their most pressing needs. Here are the incredible organizations that
+      we’ve partnered with:
+    </p>
+  </section>
 
-<section class="nonprofits">
-  <NonProfit
-    name="Bay Area Street Soccer"
-    description="Building life-changing community-based sports programs reaching the least-served communities across the U.S."
-    image="/nonprofits/street-soccer.webp"
-    startColor="rgba(223, 114, 145, 0.3)"
-    endColor="rgba(223, 114, 145, 1)"
-    url="https://www.streetsoccerusa.org/cities/san-francisco/"
-  />
-  <NonProfit
-    name="1951 Coffee"
-    description="Promoting the well-being of the refugee community in the U.S. through job training and employment"
-    image="/nonprofits/1951-coffee-company.webp"
-    startColor="rgba(247, 207, 82, 0.3)"
-    endColor="rgba(247, 207, 82, 1)"
-    url="https://www.1951coffee.com/"
-  />
-  <NonProfit
-    name="The Dancing Cat"
-    description="Animal rescue organization dedicated to saving at-risk cats from the San Jose Animal Care Center"
-    image="/nonprofits/dancing-cat.webp"
-    startColor="rgba(128, 211, 241, 0.3)"
-    endColor="rgba(128, 211, 241, 1)"
-    url="https://www.thedancingcat.org/"
-  />
-  <NonProfit
-    name="Coming soon..."
-    description="This amazing nonprofit will be announced soon!"
-    image="/nonprofits/coming-soon.webp"
-    startColor="rgba(120, 120, 120, 0.3)"
-    endColor="rgba(120, 120, 120, 1)"
-  />
-  <NonProfit
-    name="Coming soon..."
-    description="This amazing nonprofit will be announced soon!"
-    image="/nonprofits/coming-soon.webp"
-    startColor="rgba(120, 120, 120, 0.3)"
-    endColor="rgba(120, 120, 120, 1)"
-  />
-  <NonProfit
-    name="Coming soon..."
-    description="This amazing nonprofit will be announced soon!"
-    image="/nonprofits/coming-soon.webp"
-    startColor="rgba(120, 120, 120, 0.3)"
-    endColor="rgba(120, 120, 120, 1)"
-  />
-</section>
+  <section class="nonprofits">
+    <NonProfit
+      name="Bay Area Street Soccer"
+      description="Building life-changing community-based sports programs reaching the least-served communities across the U.S."
+      image="/nonprofits/street-soccer.webp"
+      startColor="rgba(223, 114, 145, 0.3)"
+      endColor="rgba(223, 114, 145, 1)"
+      url="https://www.streetsoccerusa.org/cities/san-francisco/"
+    />
+    <NonProfit
+      name="1951 Coffee"
+      description="Promoting the well-being of the refugee community in the U.S. through job training and employment"
+      image="/nonprofits/1951-coffee-company.webp"
+      startColor="rgba(247, 207, 82, 0.3)"
+      endColor="rgba(247, 207, 82, 1)"
+      url="https://www.1951coffee.com/"
+    />
+    <NonProfit
+      name="The Dancing Cat"
+      description="Animal rescue organization dedicated to saving at-risk cats from the San Jose Animal Care Center"
+      image="/nonprofits/dancing-cat.webp"
+      startColor="rgba(128, 211, 241, 0.3)"
+      endColor="rgba(128, 211, 241, 1)"
+      url="https://www.thedancingcat.org/"
+    />
+    <NonProfit
+      name="Coming soon..."
+      description="This amazing nonprofit will be announced soon!"
+      image="/nonprofits/coming-soon.webp"
+      startColor="rgba(120, 120, 120, 0.3)"
+      endColor="rgba(120, 120, 120, 1)"
+    />
+    <NonProfit
+      name="Coming soon..."
+      description="This amazing nonprofit will be announced soon!"
+      image="/nonprofits/coming-soon.webp"
+      startColor="rgba(120, 120, 120, 0.3)"
+      endColor="rgba(120, 120, 120, 1)"
+    />
+    <NonProfit
+      name="Coming soon..."
+      description="This amazing nonprofit will be announced soon!"
+      image="/nonprofits/coming-soon.webp"
+      startColor="rgba(120, 120, 120, 0.3)"
+      endColor="rgba(120, 120, 120, 1)"
+    />
+  </section>
+</div>
 
 <style lang="scss">
   @use '../styles/breakpoints';
   @use '../styles/colors';
 
   .lead {
-    width: 100%;
+    width: 80%;
     padding-left: 1rem;
     position: relative;
     display: flex;
@@ -77,11 +84,14 @@ import NonProfit from './NonProfit.astro';
     text-align: center;
     color: colors.$text;
     padding-bottom: 2rem;
-    margin-top: 180px;
+    margin: auto;
+    margin-top: 90px;
 
     @media (min-width: breakpoints.$laptop) {
+      margin-top: 180px;
       padding: 0 20%;
-      padding-bottom: 80px;
+      padding-bottom: 30px;
+      width: 100%;
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
@@ -93,7 +103,7 @@ import NonProfit from './NonProfit.astro';
 
   .nonprofits {
     width: 100%;
-    padding-left: 1rem;
+    padding: 0 10%;
     position: relative;
     display: grid;
     grid-template-rows: min-content;
@@ -103,6 +113,33 @@ import NonProfit from './NonProfit.astro';
     @media (min-width: breakpoints.$laptop) {
       padding: 0 156px;
       grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .container {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .clouds {
+    display: none;
+    position: absolute;
+    top: 72px;
+    right: -60px;
+    height: 120px;
+    @media (min-width: breakpoints.$laptop) {
+      display: block;
+    }
+  }
+
+  .sparkles {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: -18px;
+    height: 90px;
+    @media (min-width: breakpoints.$laptop) {
+      display: block;
     }
   }
 </style>
