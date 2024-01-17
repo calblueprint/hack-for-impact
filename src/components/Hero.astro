@@ -226,12 +226,9 @@ import Brand from './Brand.astro';
 <script lang="js">
   const heroParallax = document.querySelector('.parallax-container');
 
-  window.addEventListener('scroll', (e) => {
-    if (e && e.target && e.target.location)
-      return;
-    if (heroParallax)
-      heroParallax.scrollTo({
-        top: window.scrollY / 4,
-      });
+  window.addEventListener('scroll', e => {
+    // hacky fix, but will suffice for now
+    if (e && e.target && e.target.location && e.target.location.hash) return;
+    if (heroParallax) heroParallax.scrollTop = window.scrollY / 4;
   });
 </script>
