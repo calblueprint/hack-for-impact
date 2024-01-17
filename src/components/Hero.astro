@@ -4,6 +4,11 @@ import Button from './Button.astro';
 import TitleAccent from './TitleAccent.astro';
 import stopwatchIcon from '../graphics/stopwatch.svg';
 import arrowsIcon from '../graphics/arrows.svg';
+import heroGraphicLeft from '../graphics/hero_shapes_left.svg';
+import heroGraphicRight from '../graphics/hero_shapes_right.svg';
+import bearLeft from '../graphics/bear_orange.svg';
+import bearRight from '../graphics/bear_blue.svg';
+import Brand from './Brand.astro';
 ---
 
 <section>
@@ -15,7 +20,7 @@ import arrowsIcon from '../graphics/arrows.svg';
     />
     to tackle social challenges
   </h1>
-  <div>
+  <article>
     <Button variant="secondary">
       <p class="btn-text">Registration will open February 1!</p>
       <Image src={stopwatchIcon} alt="stopwatch" />
@@ -34,33 +39,61 @@ import arrowsIcon from '../graphics/arrows.svg';
       <a
         href="https://www.instagram.com/calhacks/"
         target="_blank"
-        referrerpolicy="no-referrer"
-      >@calhacks</a>
+        referrerpolicy="no-referrer">@calhacks</a
+      >
 
       on Instagram for updates.
     </span>
-  </div>
+  </article>
+
   <Image class="arrows" src={arrowsIcon} alt="arrows" />
+
+  <!-- graphics, positioned absolutely -->
+  <div class="parallax-container">
+    <div class="parallax-group">
+      <div class="parallax parallax-normal">
+        <Image class="bear-left" src={bearLeft} alt="bear with cape" />
+        <Image class="bear-right" src={bearRight} alt="bear with cape" />
+      </div>
+      <div class="parallax parallax-slow">
+        <Image class="hero-left" src={heroGraphicLeft} alt="clouds and stars" />
+        <Image
+          class="hero-right"
+          src={heroGraphicRight}
+          alt="clouds and sparkles"
+        />
+        <Brand class="hero-brand" />
+      </div>
+    </div>
+  </div>
 </section>
 
 <style lang="scss">
   @use '../styles/colors';
+  @use '../styles/breakpoints';
 
   section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 862px; // fixed width for now
-    margin: auto;
-    padding-bottom: 50px;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    padding: 0 16%;
     text-align: center;
     gap: 20px;
+    position: relative;
 
     h1 {
       margin: 0.5rem 0;
+      font-size: clamp(1.25rem, 4vw, 3.25rem);
+
+      @media (min-width: breakpoints.$laptop) {
+        width: 53.875rem;
+      }
     }
 
-    div {
+    article {
       display: flex;
       flex-direction: column;
       width: min-content;
@@ -80,7 +113,7 @@ import arrowsIcon from '../graphics/arrows.svg';
   // arrow scroll indication
   .arrows {
     position: absolute;
-    bottom: 5svh;
+    bottom: 4svh;
     animation: bounce 5s ease infinite;
   }
 
@@ -101,4 +134,99 @@ import arrowsIcon from '../graphics/arrows.svg';
       transform: translateY(-10px);
     }
   }
+
+  // bg graphic parallax
+  // kudos to https://keithclark.co.uk/articles/pure-css-parallax-websites/ (1/12/2024)
+  .parallax-container {
+    position: absolute;
+    width: 100%;
+    height: 100svh;
+    perspective: 1px;
+    overflow: hidden;
+    z-index: -1;
+
+    .parallax-group {
+      position: relative;
+      height: 100svh;
+      transform-style: preserve-3d;
+
+      .parallax {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    .parallax-normal {
+      transform: translateZ(0);
+    }
+
+    .parallax-slow {
+      transform: translateZ(-1px) scale(2);
+    }
+
+    // positioning graphics
+    $offset-left: 200px;
+    $offset-right: 200px;
+
+    .hero-left {
+      position: absolute;
+      left: -$offset-left;
+      top: 50%;
+      z-index: -1;
+      height: 80%;
+      transform: translateX(min(12vw, $offset-left)) translateY(-50%);
+    }
+
+    .hero-right {
+      position: absolute;
+      right: -$offset-right;
+      top: 50%;
+      z-index: -1;
+      height: 80%;
+      transform: translateX(clamp(#{-$offset-right}, -12vw, 0px))
+        translateY(-50%);
+    }
+
+    .hero-brand {
+      $offset: 50px;
+      position: absolute;
+      right: -$offset;
+      top: 50%;
+      transform: translate(
+        calc(clamp(#{-$offset}, -12vw, 0px) - 10px),
+        calc(50% + 150px)
+      );
+    }
+
+    .bear-left {
+      position: absolute;
+      left: -$offset-left;
+      top: 50%;
+      transform: translate(
+        calc(10px + min(12vw, $offset-left)),
+        calc(70px - 50%)
+      );
+    }
+
+    .bear-right {
+      position: absolute;
+      right: -$offset-right;
+      top: 50%;
+      transform: translate(
+        calc(25px + clamp(#{-$offset-right}, -12vw, 0px)),
+        calc(-160px - 50%)
+      );
+    }
+  }
 </style>
+
+<script>
+  const heroParallax = document.querySelector('.parallax-container');
+
+  window.addEventListener('scroll', () => {
+    if (heroParallax) heroParallax.scrollTop = window.scrollY / 4;
+  });
+</script>
