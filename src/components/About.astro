@@ -86,6 +86,7 @@ import crowd from '../graphics/about/crowd.webp';
 <style lang="scss">
   @use '../styles/colors';
   @use '../styles/fonts';
+  @use '../styles/breakpoints';
 
   section {
     position: relative;
@@ -104,7 +105,12 @@ import crowd from '../graphics/about/crowd.webp';
   }
 
   div.mission-vision {
-    max-width: 58.625rem;
+    width: 100%;
+    padding-inline: 20px;
+
+    @media (min-width: breakpoints.$tablet) {
+      padding-inline: 20%;
+    }
   }
 
   div.bigRow {
@@ -152,7 +158,12 @@ import crowd from '../graphics/about/crowd.webp';
 
   div.header {
     display: inline-block;
-    width: 744px;
+    width: 100%;
+    padding-inline: 20px;
+
+    @media (min-width: breakpoints.$tablet) {
+      padding-inline: 20%;
+    }
   }
 
   div.header h2 {

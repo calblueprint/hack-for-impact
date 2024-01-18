@@ -107,7 +107,10 @@ import Brand from './Brand.astro';
 
   .btn-text {
     width: max-content;
-    font-size: 1.25rem;
+
+    @media (min-width: breakpoints.$phone) {
+      font-size: 1.25rem;
+    }
   }
 
   // arrow scroll indication

@@ -71,6 +71,7 @@
 
 <style lang="scss">
   @use '../styles/fonts';
+  @use '../styles/breakpoints';
 
   section {
     position: relative;
@@ -82,7 +83,8 @@
 
     .header-container {
       display: flex;
-      width: 46.5rem;
+      width: 100%;
+      padding-inline: 20px;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -93,6 +95,10 @@
         font-size: 1.75rem;
         font-weight: 600;
         line-height: 150%;
+      }
+
+      @media (min-width: breakpoints.$tablet) {
+        padding-inline: 20%;
       }
     }
 
