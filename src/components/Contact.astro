@@ -7,7 +7,7 @@ import shapes from '../graphics/shapes_twirl_2.svg';
   <h4 id="contact">CONTACT US</h4>
   <div class="spacer"></div>
   <div class="row">
-    <h3>Any other&nbsp;</h3><h2>questions?</h2>
+    <h3>Any other&nbsp;<b>questions?</b></h3>
   </div>
   <div class="spacer"></div>
   <p class="description">
@@ -27,15 +27,22 @@ import shapes from '../graphics/shapes_twirl_2.svg';
 </section>
 
 <style lang="scss">
+  @use '../styles/breakpoints';
+  @use '../styles/fonts';
+
   section {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 0 auto;
-    padding: 0 20%;
+    width: 100%;
+    padding-inline: 20px;
     padding-top: 10.75rem;
+
+    @media (min-width: breakpoints.$phone) {
+      padding-inline: 20%;
+    }
   }
 
   div.spacer {
@@ -58,8 +65,18 @@ import shapes from '../graphics/shapes_twirl_2.svg';
 
   .img {
     position: absolute;
-    right: 0; 
+    right: 0;
     top: 73px;
     z-index: -1;
+    display: none;
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
+    }
+  }
+
+  h3 > b {
+    font-family: fonts.$serif;
+    font-weight: 600;
   }
 </style>

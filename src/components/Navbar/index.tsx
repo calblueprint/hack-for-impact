@@ -1,8 +1,8 @@
 // a lot of code is commented in case mobile view
 // requires an animated menu
 
-// import { useState } from 'react';
-// import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './style.module.scss';
 import logo from '../../graphics/tentative logo.svg';
 import { useEffect, useRef } from 'react';
@@ -18,7 +18,7 @@ interface Props {
 
 export default function NavBar({ links }: Props) {
   const navbarRef = useRef<HTMLElement>(null);
-  // const [menuVisible, setMenuVisible] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
   useEffect(() => {
     const checkHeight = () => {
@@ -49,7 +49,7 @@ export default function NavBar({ links }: Props) {
       </button>
 
       {/* menu toggle */}
-      {/* <button
+      <button
         className={styles.button}
         onClick={() => setMenuVisible(!menuVisible)}
       >
@@ -64,10 +64,10 @@ export default function NavBar({ links }: Props) {
           <rect x="0" y="15" width="30" height="2" fill="black" />
           <rect x="0" y="22" width="30" height="2" fill="black" />
         </svg>
-      </button> */}
+      </button>
 
       {/* backdrop */}
-      {/* <div className={styles.backdrop}></div> */}
+      <div className={styles.backdrop}></div>
 
       {/* links */}
       <section className={styles.links}>
@@ -78,7 +78,7 @@ export default function NavBar({ links }: Props) {
         ))}
       </section>
 
-      {/* <AnimatePresence>
+      <AnimatePresence>
         {menuVisible && (
           <motion.section
             className={styles.mobileLinks}
@@ -93,7 +93,7 @@ export default function NavBar({ links }: Props) {
             ))}
           </motion.section>
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
     </nav>
   );
 }

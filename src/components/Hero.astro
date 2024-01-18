@@ -79,14 +79,14 @@ import Brand from './Brand.astro';
     justify-content: center;
     width: 100%;
     flex: 1;
-    padding: 0 16%;
+    padding: 0 12%;
     text-align: center;
     gap: 20px;
     position: relative;
 
     h1 {
       margin: 0.5rem 0;
-      font-size: clamp(1.25rem, 4vw, 3.25rem);
+      font-size: clamp(1.5rem, 4vw, 3.25rem);
 
       @media (min-width: breakpoints.$laptop) {
         width: 53.875rem;
@@ -107,14 +107,22 @@ import Brand from './Brand.astro';
 
   .btn-text {
     width: max-content;
-    font-size: 1.25rem;
+
+    @media (min-width: breakpoints.$phone) {
+      font-size: 1.25rem;
+    }
   }
 
   // arrow scroll indication
   .arrows {
     position: absolute;
-    bottom: 4svh;
+    bottom: 2svh;
     animation: bounce 5s ease infinite;
+    width: 16px;
+
+    @media (min-width: breakpoints.$tablet) {
+      width: 20px;
+    }
   }
 
   @keyframes bounce {
@@ -144,6 +152,11 @@ import Brand from './Brand.astro';
     perspective: 1px;
     overflow: hidden;
     z-index: -1;
+    display: none;
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
+    }
 
     .parallax-group {
       position: relative;
@@ -194,11 +207,8 @@ import Brand from './Brand.astro';
       $offset: 50px;
       position: absolute;
       right: -$offset;
-      top: 50%;
-      transform: translate(
-        calc(clamp(#{-$offset}, -12vw, 0px) - 10px),
-        calc(50% + 150px)
-      );
+      top: 70%;
+      transform: translate(calc(clamp(#{-$offset}, -12vw, 0px) - 10px), 50%);
     }
 
     .bear-left {

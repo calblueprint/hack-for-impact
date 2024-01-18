@@ -9,68 +9,69 @@
     </p>
   </div>
 
-  <table class="schedule-container">
+  <table>
     <tr>
-      <td class="time">8:00 - 8:30 am</td>
-      <td class="event">Registration + breakfast</td>
+      <td>8:00 - 8:30 am</td>
+      <td>Registration + breakfast</td>
     </tr>
     <tr>
-      <td class="time">8:30 - 8:50 am</td>
-      <td class="event">Welcoming note</td>
+      <td>8:30 - 8:50 am</td>
+      <td>Welcoming note</td>
     </tr>
     <tr>
-      <td class="time">9:00 am</td>
-      <td class="event">Hacking begins</td>
+      <td>9:00 am</td>
+      <td>Hacking begins</td>
     </tr>
     <tr>
-      <td class="time">9:00 - 9:30 am</td>
-      <td class="event">Team mixer (optional)</td>
+      <td>9:00 - 9:30 am</td>
+      <td>Team mixer (optional)</td>
     </tr>
     <tr>
-      <td class="time">9:30 - 10:00 am</td>
-      <td class="event">Speaker - Research & Design</td>
+      <td>9:30 - 10:00 am</td>
+      <td>Speaker - Research & Design</td>
     </tr>
     <tr>
-      <td class="time">10:00 - 11:00 am</td>
-      <td class="event">Workshop – Wireframing with Figma</td>
+      <td>10:00 - 11:00 am</td>
+      <td>Workshop – Wireframing with Figma</td>
     </tr>
     <tr>
-      <td class="time">11:00 - 12:00 pm</td>
-      <td class="event">Workshop – Low-code development</td>
+      <td>11:00 - 12:00 pm</td>
+      <td>Workshop – Low-code development</td>
     </tr>
     <tr>
-      <td class="time">12:00 - 1:00 pm</td>
-      <td class="event">Lunch break</td>
+      <td>12:00 - 1:00 pm</td>
+      <td>Lunch break</td>
     </tr>
     <tr>
-      <td class="time">1:00 - 2:00 pm</td>
-      <td class="event">Workshop – TBD</td>
+      <td>1:00 - 2:00 pm</td>
+      <td>Workshop – TBD</td>
     </tr>
     <tr>
-      <td class="time">3:00 - 4:00 pm</td>
-      <td class="event">Speaker – Olaf Groth @ cambrian.ai</td>
+      <td>3:00 - 4:00 pm</td>
+      <td>Speaker – Olaf Groth @ cambrian.ai</td>
     </tr>
     <tr>
-      <td class="time">5:00 - 6:30 pm</td>
-      <td class="event">Hackathon expo, judging begins!</td>
+      <td>5:00 - 6:30 pm</td>
+      <td>Hackathon expo, judging begins!</td>
     </tr>
     <tr>
-      <td class="time">6:30 - 7:00 pm</td>
-      <td class="event">Dinner break</td>
+      <td>6:30 - 7:00 pm</td>
+      <td>Dinner break</td>
     </tr>
     <tr>
-      <td class="time">7:00 - 8:00 pm</td>
-      <td class="event">Workshop – TBD</td>
+      <td>7:00 - 8:00 pm</td>
+      <td>Workshop – TBD</td>
     </tr>
     <tr>
-      <td class="time">8:00 - 9:00 pm</td>
-      <td class="event">Prizes + closing remarks</td>
+      <td>8:00 - 9:00 pm</td>
+      <td>Prizes + closing remarks</td>
     </tr>
   </table>
 </section>
 
 <style lang="scss">
   @use '../styles/fonts';
+  @use '../styles/breakpoints';
 
   section {
     position: relative;
@@ -79,10 +80,16 @@
     align-items: center;
     gap: 4.12rem;
     padding-top: 11.25rem;
+    width: 100%;
+    padding-inline: 20px;
+
+    @media (min-width: breakpoints.$tablet) {
+      padding-inline: 20%;
+    }
 
     .header-container {
       display: flex;
-      width: 46.5rem;
+      width: 100%;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -96,25 +103,31 @@
       }
     }
 
-    .schedule-container {
-      padding-left: 15.75rem;
-      padding-right: 15.75rem;
-      flex-shrink: 0;
+    table {
+      width: 100%;
       border-radius: 1rem; /* Nonzero border radius with hidden */
       overflow: hidden; /* overflow got rid of table's outer border */
-      .time {
-        width: 15.5rem;
+
+      & td:first-child {
+        flex: 1;
         font-weight: 500;
         text-transform: uppercase;
-        line-height: 3.5rem;
+        // line-height: 3.5rem;
+        padding: 1.125rem 0;
         text-align: right;
-        padding-right: 1.5rem;
+        padding-right: min(3vw, 1.5rem);
       }
-      .event {
-        width: 35.9375rem;
-        padding-left: 3rem;
+
+      & td:last-child {
+        flex: 1;
+        padding-left: min(3vw, 3rem);
+
+        @media (min-width: breakpoints.$phone) {
+          flex: 3;
+        }
       }
     }
+
     table,
     th,
     td {

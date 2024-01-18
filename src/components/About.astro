@@ -7,6 +7,8 @@ import fourppl from '../graphics/about/fourppl.webp';
 import bear from '../graphics/about/bear.webp';
 import tools from '../graphics/about/tools.webp';
 import crowd from '../graphics/about/crowd.webp';
+import educate from '../graphics/about/bigtable.webp';
+import empower from '../graphics/about/hackers_outdoors.webp';
 ---
 
 <section>
@@ -61,7 +63,7 @@ import crowd from '../graphics/about/crowd.webp';
           Cal Hacks at UC Berkeley. The event’s mission is two-fold:
         </p>
         <div class="captionRow">
-          <div class="image-placeholder"></div>
+          <Image src={empower} alt="Group of hackers mid-jump" />
           <p>
             To <b>empower</b> student hackers to develop creative solutions for relevant
             social causes and collaborate with non-profit organizations on ethical
@@ -69,7 +71,7 @@ import crowd from '../graphics/about/crowd.webp';
           </p>
         </div>
         <div class="captionRow">
-          <div class="image-placeholder"></div>
+          <Image src={educate} alt="People gathered in a conference" />
           <p>
             To <b>educate</b> students via a <b
               >series of workshops and speaker panels</b
@@ -86,6 +88,7 @@ import crowd from '../graphics/about/crowd.webp';
 <style lang="scss">
   @use '../styles/colors';
   @use '../styles/fonts';
+  @use '../styles/breakpoints';
 
   section {
     position: relative;
@@ -104,21 +107,24 @@ import crowd from '../graphics/about/crowd.webp';
   }
 
   div.mission-vision {
-    max-width: 58.625rem;
+    width: 100%;
+    padding-inline: 20px;
+
+    @media (min-width: breakpoints.$tablet) {
+      width: min(50rem, 90%);
+    }
   }
 
   div.bigRow {
     margin-top: 8.3125rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 0 6.125rem;
     text-align: left;
-  }
 
-  .image-placeholder {
-    background-color: colors.$secondary;
-    min-width: 10.5rem;
-    height: 7.0625rem;
+    @media (min-width: breakpoints.$tablet) {
+      flex-direction: row;
+    }
   }
 
   h2.left {
@@ -128,9 +134,23 @@ import crowd from '../graphics/about/crowd.webp';
 
   div.captionRow {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 3.75rem;
-    gap: 0 1.5rem;
+    gap: 1.5rem;
+
+    @media (min-width: breakpoints.$phone) {
+      flex-direction: row;
+    }
+
+    img {
+      background-color: colors.$secondary;
+      min-width: 10.5rem;
+      max-width: 10.5rem;
+      height: 7.0625rem;
+      margin: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
   }
 
   div.text {
@@ -139,20 +159,18 @@ import crowd from '../graphics/about/crowd.webp';
     display: inline-block;
   }
 
-  div.captionRow {
-    display: flex;
-    flex-direction: row;
-    margin-top: 3.75rem;
-    gap: 0 1.5rem;
-  }
-
   div.spacer {
     height: 1.5rem;
   }
 
   div.header {
     display: inline-block;
-    width: 744px;
+    width: 100%;
+    padding-inline: 20px;
+
+    @media (min-width: breakpoints.$tablet) {
+      padding-inline: 20%;
+    }
   }
 
   div.header h2 {
@@ -177,5 +195,10 @@ import crowd from '../graphics/about/crowd.webp';
     position: absolute;
     left: 0px;
     bottom: 88px;
+    display: none;
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
+    }
   }
 </style>
