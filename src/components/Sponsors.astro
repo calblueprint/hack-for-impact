@@ -44,6 +44,7 @@ import witiLogo from '../graphics/sponsors/witi.webp';
 
 <style lang="scss">
   @use '../styles/fonts';
+  @use '../styles/breakpoints';
 
   section {
     position: relative;
@@ -52,6 +53,7 @@ import witiLogo from '../graphics/sponsors/witi.webp';
     align-items: center;
     gap: 6rem;
     padding-top: 11.25rem;
+    overflow-x: hidden;
 
     .header-container {
       display: flex;
@@ -70,7 +72,7 @@ import witiLogo from '../graphics/sponsors/witi.webp';
 
     .sponsors-container {
       display: flex;
-      width: 100%;
+      width: min(770px, 100%);
       justify-content: center;
       align-content: center;
       gap: 6px 80px;
@@ -95,16 +97,28 @@ import witiLogo from '../graphics/sponsors/witi.webp';
 
     .clouds {
       position: absolute;
-      left: 0;
+      left: -400px;
       bottom: -6rem;
       z-index: -1;
+      display: none;
+      transform: translateX(clamp(0px, 30vw, 300px));
+
+      @media (min-width: breakpoints.$tablet) {
+        display: block;
+      }
     }
 
     .sheep {
       position: absolute;
-      right: 0;
+      right: -400px;
       top: 4rem;
       z-index: -1;
+      display: none;
+      transform: translateX(clamp(-400px, -30vw, 0px));
+
+      @media (min-width: breakpoints.$tablet) {
+        display: block;
+      }
     }
   }
 </style>
