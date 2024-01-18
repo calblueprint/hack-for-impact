@@ -7,6 +7,8 @@ import fourppl from '../graphics/about/fourppl.webp';
 import bear from '../graphics/about/bear.webp';
 import tools from '../graphics/about/tools.webp';
 import crowd from '../graphics/about/crowd.webp';
+import educate from '../graphics/about/bigtable.webp';
+import empower from '../graphics/about/hackers_outdoors.webp';
 ---
 
 <section>
@@ -61,7 +63,7 @@ import crowd from '../graphics/about/crowd.webp';
           Cal Hacks at UC Berkeley. The event’s mission is two-fold:
         </p>
         <div class="captionRow">
-          <div class="image-placeholder"></div>
+          <Image src={empower} alt="Group of hackers mid-jump" />
           <p>
             To <b>empower</b> student hackers to develop creative solutions for relevant
             social causes and collaborate with non-profit organizations on ethical
@@ -69,7 +71,7 @@ import crowd from '../graphics/about/crowd.webp';
           </p>
         </div>
         <div class="captionRow">
-          <div class="image-placeholder"></div>
+          <Image src={educate} alt="People gathered in a conference" />
           <p>
             To <b>educate</b> students via a <b
               >series of workshops and speaker panels</b
@@ -125,14 +127,6 @@ import crowd from '../graphics/about/crowd.webp';
     }
   }
 
-  .image-placeholder {
-    background-color: colors.$secondary;
-    min-width: 10.5rem;
-    max-width: 10.5rem;
-    height: 7.0625rem;
-    margin: auto;
-  }
-
   h2.left {
     display: inline-block;
     min-width: 12rem;
@@ -146,6 +140,16 @@ import crowd from '../graphics/about/crowd.webp';
 
     @media (min-width: breakpoints.$phone) {
       flex-direction: row;
+    }
+
+    img {
+      background-color: colors.$secondary;
+      min-width: 10.5rem;
+      max-width: 10.5rem;
+      height: 7.0625rem;
+      margin: auto;
+      border-radius: 8px;
+      object-fit: cover;
     }
   }
 
