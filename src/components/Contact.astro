@@ -68,6 +68,11 @@ import shapes from '../graphics/shapes_twirl_2.svg';
     right: 0;
     top: 73px;
     z-index: -1;
+    display: none;
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
+    }
   }
 
   h3 > b {
