@@ -109,22 +109,28 @@ import crowd from '../graphics/about/crowd.webp';
     padding-inline: 20px;
 
     @media (min-width: breakpoints.$tablet) {
-      padding-inline: 20%;
+      width: min(50rem, 90%);
     }
   }
 
   div.bigRow {
     margin-top: 8.3125rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 0 6.125rem;
     text-align: left;
+
+    @media (min-width: breakpoints.$tablet) {
+      flex-direction: row;
+    }
   }
 
   .image-placeholder {
     background-color: colors.$secondary;
     min-width: 10.5rem;
+    max-width: 10.5rem;
     height: 7.0625rem;
+    margin: auto;
   }
 
   h2.left {
@@ -134,22 +140,19 @@ import crowd from '../graphics/about/crowd.webp';
 
   div.captionRow {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 3.75rem;
-    gap: 0 1.5rem;
+    gap: 1.5rem;
+
+    @media (min-width: breakpoints.$phone) {
+      flex-direction: row;
+    }
   }
 
   div.text {
     font-family: fonts.$serif;
     font-weight: 600;
     display: inline-block;
-  }
-
-  div.captionRow {
-    display: flex;
-    flex-direction: row;
-    margin-top: 3.75rem;
-    gap: 0 1.5rem;
   }
 
   div.spacer {
@@ -188,5 +191,10 @@ import crowd from '../graphics/about/crowd.webp';
     position: absolute;
     left: 0px;
     bottom: 88px;
+    display: none;
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
+    }
   }
 </style>
