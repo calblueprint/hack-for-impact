@@ -79,7 +79,7 @@ import Brand from './Brand.astro';
     justify-content: center;
     width: 100%;
     flex: 1;
-    padding: 0 16%;
+    padding: 0 12%;
     text-align: center;
     gap: 20px;
     position: relative;
@@ -116,8 +116,13 @@ import Brand from './Brand.astro';
   // arrow scroll indication
   .arrows {
     position: absolute;
-    bottom: 4svh;
+    bottom: 2svh;
     animation: bounce 5s ease infinite;
+    width: 16px;
+
+    @media (min-width: breakpoints.$tablet) {
+      width: 20px;
+    }
   }
 
   @keyframes bounce {
@@ -147,6 +152,11 @@ import Brand from './Brand.astro';
     perspective: 1px;
     overflow: hidden;
     z-index: -1;
+    display: none;
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
+    }
 
     .parallax-group {
       position: relative;
