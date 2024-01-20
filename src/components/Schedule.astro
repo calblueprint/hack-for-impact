@@ -1,4 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import shapesLeft from '../graphics/shapes_twirl_1.svg';
+import shapesRight from '../graphics/shapes_sparkle_1.svg';
+---
+
 <section>
+  <Image class="shape-left" src={shapesLeft} alt="" />
+  <Image class="shape-right" src={shapesRight} alt="" />
+
   <div class="header-container">
     <h4 id="schedule">SCHEDULE</h4>
     <h3>1 day, but <b>countless</b> possibilities</h3>
@@ -133,6 +142,36 @@
     td {
       border: 1px solid #dfd2c4;
       border-collapse: collapse;
+    }
+  }
+
+  .shape-left {
+    $offset: 200px;
+
+    position: absolute;
+    top: 100px;
+    left: -$offset;
+    z-index: -1;
+    display: none;
+    transform: translateX(clamp(0px, 15vw, $offset));
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
+    }
+  }
+
+  .shape-right {
+    $offset: 100px;
+
+    position: absolute;
+    top: 150px;
+    right: -$offset;
+    z-index: -1;
+    display: none;
+    transform: translateX(clamp(#{-$offset}, -15vw, 0px));
+
+    @media (min-width: breakpoints.$tablet) {
+      display: block;
     }
   }
 </style>
