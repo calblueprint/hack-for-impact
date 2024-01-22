@@ -67,7 +67,9 @@ export default function NavBar({ links }: Props) {
       </button>
 
       {/* backdrop */}
-      <div className={styles.backdrop}></div>
+      <div
+        className={`${styles.backdrop} ${menuVisible ? styles.show : null}`}
+      ></div>
 
       {/* links */}
       <section className={styles.links}>
