@@ -1,14 +1,43 @@
 ---
 import { Image } from 'astro:assets';
-import working from '../graphics/about/working.webp';
 import shapes from '../graphics/clouds_star_twirl_1.svg';
-import crowdLarge from '../graphics/about/crowd_large.webp';
-import fourppl from '../graphics/about/fourppl.webp';
-import bear from '../graphics/about/bear.webp';
-import tools from '../graphics/about/tools.webp';
-import crowd from '../graphics/about/crowd.webp';
+import gallery1 from '../graphics/about/working.webp';
+import gallery2 from '../graphics/about/crowd_large.webp';
+import gallery3 from '../graphics/about/fourppl.webp';
+import gallery4 from '../graphics/about/bear.webp';
+import gallery5 from '../graphics/about/tools.webp';
+import gallery6 from '../graphics/about/crowd.webp';
+import gallery7 from '../graphics/about/bigtable.webp';
+import gallery8 from '../graphics/about/caffeinated.webp';
+import gallery9 from '../graphics/about/calhacks_director.webp';
+import gallery10 from '../graphics/about/focused.webp';
+import gallery11 from '../graphics/about/hacker_group.webp';
+import gallery12 from '../graphics/about/hackers_indoors.webp';
+import gallery13 from '../graphics/about/hackers_outdoors.webp';
+import gallery14 from '../graphics/about/levitating.webp';
+import gallery15 from '../graphics/about/thinking.webp';
+import gallery16 from '../graphics/about/thumbsup.webp';
 import educate from '../graphics/about/bigtable.webp';
 import empower from '../graphics/about/hackers_outdoors.webp';
+
+const galleryImages = [
+  { src: gallery1, alt: 'Group of 5 people coding' },
+  { src: gallery2, alt: 'Large convention filled with people' },
+  { src: gallery3, alt: 'CalHacks members' },
+  { src: gallery4, alt: 'Hackers with a big bear' },
+  { src: gallery5, alt: 'Girl with tools' },
+  { src: gallery6, alt: 'Large group of people at a hackathon' },
+  { src: gallery7, alt: 'Someone at a sponsor table' },
+  { src: gallery8, alt: 'Hackers smiling at the camera' },
+  { src: gallery9, alt: 'Four CalHacks directors' },
+  { src: gallery10, alt: 'Girls focused on coding' },
+  { src: gallery11, alt: 'Group photo of hackers' },
+  { src: gallery12, alt: 'Four hackers indoors' },
+  { src: gallery13, alt: 'Four hackers outdoors' },
+  { src: gallery14, alt: 'Hackers in the middle of a jump' },
+  { src: gallery15, alt: 'A hacker faced with a hard problem' },
+  { src: gallery16, alt: 'Hackers posing at the camera' },
+];
 ---
 
 <section>
@@ -23,24 +52,10 @@ import empower from '../graphics/about/hackers_outdoors.webp';
   </div>
 
   <div class="imageRow">
-    <Image class="img" src={working} alt="Group of 5 people coding" />
-    <Image
-      class="img"
-      src={crowdLarge}
-      alt="Large group of people coding at hackathon"
-    />
-    <Image class="img" src={fourppl} alt="Picture of CalHacks members" />
-    <Image
-      class="img"
-      src={bear}
-      alt="Hackathon attendees posing with stuffed bear"
-    />
-    <Image class="img" src={tools} alt="Girl with tools" />
-    <Image
-      class="img"
-      src={crowd}
-      alt="Large group of people coding at hackathon"
-    />
+    <div class="gallery">
+      {galleryImages.map(img => <Image class="img" {...img} loading="eager" />)}
+      {galleryImages.map(img => <Image class="img" {...img} loading="eager" />)}
+    </div>
   </div>
 
   <Image class="shape" src={shapes} alt="" />
@@ -143,9 +158,9 @@ import empower from '../graphics/about/hackers_outdoors.webp';
 
     img {
       background-color: colors.$secondary;
-      min-width: 10.5rem;
-      max-width: 10.5rem;
-      height: 7.0625rem;
+      min-width: 168px;
+      max-width: 168px;
+      height: 113px;
       margin: auto;
       border-radius: 8px;
       object-fit: cover;
@@ -177,10 +192,30 @@ import empower from '../graphics/about/hackers_outdoors.webp';
   }
 
   div.imageRow {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
+    position: relative;
     margin-top: 74px;
+    height: 171px;
+    width: 100%;
+    overflow-x: hidden;
+
+    .gallery {
+      $gap: 24px;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      gap: $gap;
+      padding-left: $gap;
+      animation: slideshow 30s linear infinite;
+      transform: translateX(0, 0, 0);
+
+      @keyframes slideshow {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+    }
   }
 
   .img {
