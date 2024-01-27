@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from './style.module.scss';
 import logo from '../../graphics/tentative logo.svg';
 import { useEffect, useRef } from 'react';
+import Button from '../Button';
 
 interface Link {
   name: string;
@@ -42,11 +43,29 @@ export default function NavBar({ links }: Props) {
   };
 
   return (
-    <nav ref={navbarRef}>
+    <nav className={styles.nav} ref={navbarRef}>
       {/* logo */}
       <button className={styles.logo} onClick={backToTop}>
         <img src={logo.src} alt="logo" />
       </button>
+
+      {/* links */}
+      <section className={styles.links}>
+        {links.map(l => (
+          <a href={l.url} key={l.url}>
+            <h5>{l.name}</h5>
+          </a>
+        ))}
+        {/* registration button */}
+        <Button variant="menu" href="https://tinyurl.com/hackforimpactregister">
+          REGISTER
+        </Button>
+      </section>
+
+      {/* backdrop */}
+      <div
+        className={`${styles.backdrop} ${menuVisible ? styles.show : null}`}
+      ></div>
 
       {/* menu toggle */}
       <button
@@ -65,20 +84,6 @@ export default function NavBar({ links }: Props) {
           <rect x="0" y="22" width="30" height="2" fill="black" />
         </svg>
       </button>
-
-      {/* backdrop */}
-      <div
-        className={`${styles.backdrop} ${menuVisible ? styles.show : null}`}
-      ></div>
-
-      {/* links */}
-      <section className={styles.links}>
-        {links.map(l => (
-          <a href={l.url} key={l.url}>
-            <h5>{l.name}</h5>
-          </a>
-        ))}
-      </section>
 
       <AnimatePresence>
         {menuVisible && (
