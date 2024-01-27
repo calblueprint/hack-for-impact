@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Button from './Button.astro';
 import TitleAccent from './TitleAccent.astro';
 import arrowsIcon from '../graphics/arrows.svg';
+import redirectArrow from '../graphics/redirect_arrow.svg';
 import heroGraphicLeft from '../graphics/hero_shapes_left.svg';
 import heroGraphicRight from '../graphics/hero_shapes_right.svg';
 import bearLeft from '../graphics/bear_orange.svg';
@@ -20,8 +21,9 @@ import Brand from './Brand.astro';
     to tackle social challenges
   </h1>
   <article>
-    <Button variant="secondary" href="http://tinyurl.com/hackforimpactregister">
-      <p class="btn-text">Registration is open!</p>
+    <Button variant="primary" href="http://tinyurl.com/hackforimpactregister">
+      <p class="btn-text">Register now!</p>
+      <Image src={redirectArrow} alt="external" />
     </Button>
     <span>
       Registration will close Feb. 16th. Follow
@@ -105,6 +107,7 @@ import Brand from './Brand.astro';
 
   .btn-text {
     width: max-content;
+    font-weight: 500;
 
     @media (min-width: breakpoints.$phone) {
       font-size: 1.25rem;
