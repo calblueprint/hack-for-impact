@@ -1,5 +1,6 @@
 @use '../../styles/colors';
 @use '../../styles/breakpoints';
+@use '../../styles/fonts';
 
 $primary-hover: #6dbeda;
 $primary-pressed: #53a0bc;
@@ -19,6 +20,8 @@ $primary-pressed: #53a0bc;
 
   &.menu {
     padding: 0.75rem;
+    font-family: fonts.$mono;
+    line-height: 1;
   }
 
   &.disabled {
