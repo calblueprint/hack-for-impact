@@ -2,39 +2,33 @@
 import { Image } from 'astro:assets';
 import clouds from '../graphics/clouds_stars.svg';
 import sheep from '../graphics/sheep.svg';
-import citrisLogo from '../graphics/sponsors/citris.webp';
-import wealthfrontLogo from '../graphics/sponsors/wealthfront.webp';
-import bstfLogo from '../graphics/sponsors/bstf.webp';
-import notionLogo from '../graphics/sponsors/notion.webp';
-import ffwdLogo from '../graphics/sponsors/ffwd.webp';
-import edgeLogo from '../graphics/sponsors/edge.webp';
+import twoBttnsLogo from '../graphics/sponsors/new_2bttns.webp';
+import twelveLabsLogo from '../graphics/sponsors/new_twelvelabs.webp';
+import hackerEarthLogo from '../graphics/sponsors/new_hackerearth.webp';
+import vespaLogo from '../graphics/sponsors/new_vespa.webp';
 ---
 
 <section>
   <div class="header-container">
     <h4 id="sponsors">SPONSORS & PARTNERS</h4>
-    <h3>A round of applause for our <b>past sponsors</b></h3>
-    <p>Stay tuned — Hack for Impact sponsors will be released soon!</p>
+    <h3>
+      A round of applause for our <b>sponsors</b>, who make all of this
+      possible.
+    </h3>
   </div>
 
   <div class="sponsors-container">
-    <a href="https://citris-uc.org/" target="_blank">
-      <Image src={citrisLogo} alt="CITRIS and the Banatao Institute" />
+    <a href="https://www.2bttns.com/" target="_blank">
+      <Image src={twoBttnsLogo} alt="2bttns" />
     </a>
-    <a href="https://www.wealthfront.com/" target="_blank">
-      <Image src={wealthfrontLogo} alt="Wealthfront" />
+    <a href="https://www.hackerearth.com/" target="_blank">
+      <Image src={hackerEarthLogo} alt="HackerEarth" />
     </a>
-    <a href="https://techfund.berkeley.edu/home" target="_blank">
-      <Image src={bstfLogo} alt="Berkeley Student Technology Fund" />
+    <a href="https://twelvelabs.io/" target="_blank">
+      <Image src={twelveLabsLogo} alt="Twelve Labs" />
     </a>
-    <a href="https://www.notion.so/product" target="_blank">
-      <Image src={notionLogo} alt="Notion" />
-    </a>
-    <a href="https://www.ffwd.org/" target="_blank">
-      <Image src={ffwdLogo} alt="Fast Forward" />
-    </a>
-    <a href="https://edge.berkeley.edu" target="_blank">
-      <Image src={edgeLogo} alt="Edge in Tech Initiaive" />
+    <a href="https://vespa.ai/" target="_blank">
+      <Image src={vespaLogo} alt="Vespa" />
     </a>
   </div>
 
