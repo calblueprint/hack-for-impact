@@ -57,12 +57,14 @@ if (variant === 'menu') classes.push('menu');
   a.primary {
     background-color: colors.$primary;
 
-    &:hover {
-      background-color: $primary-hover;
-    }
+    &:not(.disabled) {
+      &:hover {
+        background-color: $primary-hover;
+      }
 
-    &:active {
-      background-color: $primary-pressed;
+      &:active {
+        background-color: $primary-pressed;
+      }
     }
   }
 </style>

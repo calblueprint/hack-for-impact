@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from './style.module.scss';
 import logo from '../../graphics/tentative logo.svg';
 import { useEffect, useRef } from 'react';
-import Button from '../Button';
 
 interface Link {
   name: string;
@@ -56,10 +55,6 @@ export default function NavBar({ links }: Props) {
             <h5>{l.name}</h5>
           </a>
         ))}
-        {/* registration button */}
-        <Button variant="menu" href="https://tinyurl.com/hackforimpactregister">
-          REGISTER
-        </Button>
       </section>
 
       {/* backdrop */}
