@@ -38,6 +38,12 @@ const { name, description, image, startColor, endColor, url } = Astro.props;
     flex-direction: column;
     justify-content: flex-end;
 
+    &:last-child {
+      @media (min-width: breakpoints.$laptop) {
+        grid-column: 2;
+      }
+    }
+
     .bg {
       position: absolute;
       top: 0;
